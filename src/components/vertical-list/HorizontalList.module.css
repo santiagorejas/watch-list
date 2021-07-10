@@ -1,0 +1,7 @@
+.vertical-container {
+	overflow-x: scroll;
+}
+
+.content-container {
+	display: inline-flex;
+}
