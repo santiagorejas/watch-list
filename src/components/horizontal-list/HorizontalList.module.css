@@ -1,0 +1,19 @@
+.vertical-container {
+  position: relative;
+}
+
+.content-container-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  transition: all 200ms ease-out;
+}
+
+.content-container {
+  display: inline-flex;
+}
+
+.title {
+  color: white;
+  margin: 1.2rem 0;
+  font-size: 2rem;
+}

@@ -1,0 +1,21 @@
+.slide-btn {
+  position: absolute;
+  top: 35%;
+  background-color: transparent;
+  border: none;
+  background-image: linear-gradient(to right, black 15%, transparent);
+  padding: 0.8rem;
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.slide-btn {
+  opacity: 100%;
+  transition: opacity 200ms ease-out;
+}
+
+.slide-btn i {
+  font-size: 2rem;
+  color: #5cdb95;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
