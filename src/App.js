@@ -2,19 +2,19 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/nav/NavBar";
-import FavoritesProvider from "./store/FavoritesProvider";
+import FavoritesWatchedProvider from "./store/FavoritesWatchedProvider";
 
 function App() {
   return (
     <>
       <NavBar />
-      <FavoritesProvider>
+      <FavoritesWatchedProvider>
         <Switch>
           <Route path="/">
             <HomePage />
           </Route>
         </Switch>
-      </FavoritesProvider>
+      </FavoritesWatchedProvider>
     </>
   );
 }

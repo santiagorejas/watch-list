@@ -4,7 +4,7 @@ import classes from "./HorizontalList.module.css";
 import SlideButton from "./SlideButton";
 import Spinner from "../UI/Spinner";
 import { useContext } from "react";
-import FavoritesContext from "../../store/favorites-context";
+import FavoritesWatchedContext from "../../store/favorites-watched-context";
 
 const HorizontalList = (props) => {
   const [content, setContent] = useState([]);
@@ -28,9 +28,8 @@ const HorizontalList = (props) => {
     fetchData(url);
   }, [url]);
 
-  const favCtx = useContext(FavoritesContext);
-
   const cardContainerWrapperRef = useRef();
+  const favWatchedCtx = useContext(FavoritesWatchedContext);
 
   if (isLoading) {
     return (
@@ -52,10 +51,14 @@ const HorizontalList = (props) => {
           {content.map((cont) => {
             return (
               <MediaCard
+                key={cont.id}
                 content={cont}
-                favorite={favCtx.favorites.includes(cont.id)}
-                addFav={favCtx.addFavorite}
-                removeFav={favCtx.removeFavorite}
+                fav={favWatchedCtx.favorites.includes(cont.id)}
+                watched={favWatchedCtx.watched.includes(cont.id)}
+                onAddFav={favWatchedCtx.addFavorite}
+                onRemoveFav={favWatchedCtx.removeFavorite}
+                onAddWatched={favWatchedCtx.addWatched}
+                onRemoveWatched={favWatchedCtx.removeWatched}
               />
             );
           })}

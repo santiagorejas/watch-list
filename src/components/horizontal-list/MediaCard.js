@@ -1,12 +1,12 @@
 import classes from "./MediaCard.module.css";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 const MediaCard = (props) => {
-  const [fav, setFav] = useState(props.favorite);
-
-  console.log("RENDER");
-
   const { content } = props;
+
+  const [fav, setFav] = useState(props.fav);
+  const [watched, setWatched] = useState(props.watched);
+
   const title = content.title ? content.title : content.name;
 
   const img = `https://image.tmdb.org/t/p/w500${content.poster_path}`;
@@ -16,14 +16,32 @@ const MediaCard = (props) => {
 
   const onFavHandler = () => {
     setFav((prev) => !prev);
-    !fav ? props.addFav(content.id) : props.removeFav(content.id);
+    !fav ? props.onAddFav(content.id) : props.onRemoveFav(content.id);
+  };
+
+  const onWatchedHandler = () => {
+    setWatched((prev) => !prev);
+    !watched
+      ? props.onAddWatched(content.id)
+      : props.onRemoveWatched(content.id);
   };
 
   return (
     <div className={classes.card}>
       <div className={classes["img-container"]}>
         <img src={img} />
-        <i onClick={onFavHandler} class="fas fa-heart" style={favColor}></i>
+        <i
+          className={classes["fav-icon"] + " fas fa-heart"}
+          onClick={onFavHandler}
+          style={favColor}
+        ></i>
+        <i
+          className={`${classes["watched-icon"]} far fa-eye${
+            watched ? "-slash" : ""
+          }`}
+          onClick={onWatchedHandler}
+        ></i>
+
         <p>{content.vote_average}</p>
       </div>
       <h1 className={classes.title}>{title}</h1>
