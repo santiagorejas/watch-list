@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import HorizontalList from "../components/horizontal-list/HorizontalList";
+import Spinner from "../components/UI/Spinner";
 
 const HomePage = () => {
   const url =

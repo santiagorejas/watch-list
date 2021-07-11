@@ -2,14 +2,17 @@ import { useEffect, useState, useRef } from "react";
 import MediaCard from "./MediaCard";
 import classes from "./HorizontalList.module.css";
 import SlideButton from "./SlideButton";
+import Spinner from "../UI/Spinner";
 
 const HorizontalList = (props) => {
   const [content, setContent] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { url } = props;
 
   useEffect(() => {
     const fetchData = async (url) => {
+      setIsLoading(true);
       const response = await fetch(url);
       const data = await response.json();
       let contentList = [];
@@ -17,12 +20,22 @@ const HorizontalList = (props) => {
         contentList.push(cont);
       });
       setContent(contentList);
+      setIsLoading(false);
     };
 
     fetchData(url);
   }, [url]);
 
   const cardContainerWrapperRef = useRef();
+
+  if (isLoading) {
+    return (
+      <div className={classes["vertical-container"]}>
+        <h1 className={classes.title}>{props.title}</h1>
+        <Spinner />
+      </div>
+    );
+  }
 
   return (
     <div className={classes["vertical-container"]}>
