@@ -1,20 +1,23 @@
 import classes from "./MediaCard.module.css";
 import { useState } from "react";
+import { useContext } from "react";
+import FavoritesContext from "../../store/favorites-context";
 
 const MediaCard = (props) => {
   const { content } = props;
   const title = content.title ? content.title : content.name;
 
+  const favsCtx = useContext(FavoritesContext);
+
   const img = `https://image.tmdb.org/t/p/w500${content.poster_path}`;
-  const favs = window.localStorage.getItem("fav");
-  const [fav, setFav] = useState(false);
+  const [fav, setFav] = useState(favsCtx.favorites.includes(content.id));
   const favColor = {
     color: fav ? "red" : "#ccc",
   };
 
   const onFavHandler = () => {
     setFav((prev) => !prev);
-    console.log("Hola mundo!");
+    favsCtx.addFavorite(content.id);
   };
 
   return (
