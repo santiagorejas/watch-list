@@ -1,4 +1,4 @@
-import classes from "./MediaCard.module.css";
+import classes from "./HorizontalCard.module.css";
 import React, { useState } from "react";
 
 const MediaCard = (props) => {

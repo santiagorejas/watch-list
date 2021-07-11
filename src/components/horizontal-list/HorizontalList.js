@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import MediaCard from "./MediaCard";
+import HorizontalCard from "./HorizontalCard";
 import classes from "./HorizontalList.module.css";
 import SlideButton from "./SlideButton";
 import Spinner from "../UI/Spinner";
@@ -50,7 +50,7 @@ const HorizontalList = (props) => {
         <div className={classes["content-container"]}>
           {content.map((cont) => {
             return (
-              <MediaCard
+              <HorizontalCard
                 key={cont.id}
                 content={cont}
                 fav={favWatchedCtx.favorites.includes(cont.id)}
