@@ -1,5 +1,10 @@
 .card {
   width: 12rem;
+  transition: transform 200ms ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .img-container,
@@ -15,11 +20,6 @@
 .img-container img {
   width: 80%;
   border-radius: 8px;
-}
-
-.img-container img:hover {
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 200ms ease-in-out;
 }
 
 .img-container i {

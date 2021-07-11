@@ -11,14 +11,14 @@ const FavoritesProvider = (props) => {
     }
   }, []);
 
-  const addFavorites = (id) => {
+  const addFavorite = (id) => {
     const newFavorites = [...favorites, id];
     setFavorites(newFavorites);
     window.localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
-  const removeFavorites = (id) => {
-    const newFavorites = favorites.filter((fav) => fav.id != id);
+  const removeFavorite = (id) => {
+    const newFavorites = favorites.filter((fav) => fav.id !== id);
     setFavorites(newFavorites);
     newFavorites
       ? window.localStorage.setItem("favorites", JSON.stringify(newFavorites))
@@ -29,8 +29,8 @@ const FavoritesProvider = (props) => {
     <FavoritesContex.Provider
       value={{
         favorites: favorites,
-        addFavorite: addFavorites,
-        removeFavorites: removeFavorites,
+        addFavorite: addFavorite,
+        removeFavorite: removeFavorite,
       }}
     >
       {props.children}

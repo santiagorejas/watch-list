@@ -6,6 +6,7 @@
   width: 100%;
   overflow-x: hidden;
   transition: all 200ms ease-out;
+  padding: 1rem 0;
 }
 
 .content-container {
