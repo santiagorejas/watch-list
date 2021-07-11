@@ -50,4 +50,4 @@ const MediaCard = (props) => {
   );
 };
 
-export default React.memo(MediaCard);
+export default MediaCard;
