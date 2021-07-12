@@ -29,15 +29,11 @@ const VerticalCardContainer = (props) => {
     fetchData();
   }, [moviesId]);
 
-  console.log("separador");
-
   const favWatchedCtx = useContext(FavoritesWatchedContext);
 
   return (
     <div className={classes["vertical-card-container"]}>
       {content.map((cont) => {
-        console.log(`id: ${cont.id}`);
-        console.log(`Fav? ${favWatchedCtx.favorites.includes(cont.id)}`);
         return (
           <VerticalCard
             ket={cont.id}

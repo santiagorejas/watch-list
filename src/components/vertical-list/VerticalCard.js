@@ -25,8 +25,6 @@ const VerticalCard = (props) => {
     !watched ? onAddWatched(content.id) : onRemoveWatched(content.id);
   };
 
-  console.log(fav);
-
   return (
     <div className={classes["vertical-card"]}>
       <img className={classes["card-img"]} src={img} />

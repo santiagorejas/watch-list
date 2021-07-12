@@ -30,8 +30,6 @@ const FavoritesWatchedProvider = (props) => {
   };
 
   const isFav = (id) => {
-    console.log("ID: " + id);
-    console.log(favorites);
     return favorites.includes(id);
   };
 
