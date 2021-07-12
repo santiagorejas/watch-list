@@ -17,17 +17,22 @@ const FavoritesWatchedProvider = (props) => {
 
   const addFavorite = (id) => {
     const newFavorites = [...favorites, id];
-    setFavorites(newFavorites);
+    setFavorites((prev) => [...prev, id]);
     window.localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
   const removeFavorite = (id) => {
     const newFavorites = favorites.filter((favId) => favId !== id);
-    console.log(newFavorites);
-    setFavorites(newFavorites);
+    setFavorites((prev) => prev.filter((favId) => favId !== id));
     newFavorites.length > 0
       ? window.localStorage.setItem("favorites", JSON.stringify(newFavorites))
       : window.localStorage.removeItem("favorites");
+  };
+
+  const isFav = (id) => {
+    console.log("ID: " + id);
+    console.log(favorites);
+    return favorites.includes(id);
   };
 
   const addWatched = (id) => {
@@ -44,6 +49,10 @@ const FavoritesWatchedProvider = (props) => {
       : window.localStorage.removeItem("watched");
   };
 
+  const wasWatched = (id) => {
+    return watched.includes(id);
+  };
+
   return (
     <FavoritesWatchedContext.Provider
       value={{
@@ -51,8 +60,10 @@ const FavoritesWatchedProvider = (props) => {
         watched: watched,
         addFavorite: addFavorite,
         removeFavorite: removeFavorite,
+        isFav: isFav,
         addWatched: addWatched,
         removeWatched: removeWatched,
+        wasWatched: wasWatched,
       }}
     >
       {props.children}

@@ -1,0 +1,9 @@
+.vertical-card-container {
+  background-color: #02162a;
+  width: 90%;
+  max-width: 70rem;
+  margin: auto;
+  border-radius: 16px;
+  padding: 0.2rem;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+}

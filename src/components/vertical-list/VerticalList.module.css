@@ -1,0 +1,8 @@
+.vertical-card-container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  margin: auto;
+  gap: 2rem;
+}
