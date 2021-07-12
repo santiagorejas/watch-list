@@ -2,10 +2,15 @@ import classes from "./HorizontalCard.module.css";
 import React, { useState } from "react";
 
 const MediaCard = (props) => {
-  const { content } = props;
-
-  const [fav, setFav] = useState(props.fav);
-  const [watched, setWatched] = useState(props.watched);
+  const {
+    content,
+    fav,
+    watched,
+    onAddFav,
+    onRemoveFav,
+    onAddWatched,
+    onRemoveWatched,
+  } = props;
 
   const title = content.title ? content.title : content.name;
 
@@ -15,15 +20,11 @@ const MediaCard = (props) => {
   };
 
   const onFavHandler = () => {
-    setFav((prev) => !prev);
-    !fav ? props.onAddFav(content.id) : props.onRemoveFav(content.id);
+    !fav ? onAddFav(content.id) : onRemoveFav(content.id);
   };
 
   const onWatchedHandler = () => {
-    setWatched((prev) => !prev);
-    !watched
-      ? props.onAddWatched(content.id)
-      : props.onRemoveWatched(content.id);
+    !watched ? onAddWatched(content.id) : onRemoveWatched(content.id);
   };
 
   return (
