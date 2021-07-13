@@ -1,6 +1,6 @@
 .card {
-  width: 12rem;
-  transition: transform 200ms ease-in-out;
+  width: 13rem;
+  transition: all 200ms ease-in-out;
 }
 
 .card:hover {
@@ -26,7 +26,8 @@
   position: absolute;
   color: #ccc;
   background-color: black;
-  padding: 0.6rem;
+  padding: 0.7rem;
+  font-size: 1.3rem;
   border-radius: 50%;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   border: 2px solid #03274b;
@@ -40,7 +41,7 @@
 }
 
 .watched-icon {
-  bottom: 20%;
+  bottom: 25%;
 }
 
 .img-container i:hover {
@@ -60,7 +61,7 @@
 
 .title {
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
   width: 80%;
@@ -69,4 +70,34 @@
 
 .title:hover {
   font-weight: 600;
+}
+
+@media (max-width: 60rem) {
+  .card {
+    width: 10rem;
+  }
+
+  .img-container i {
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .card {
+    width: 8rem;
+  }
+
+  .img-container i {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .title {
+    font-size: 0.9rem;
+  }
 }
