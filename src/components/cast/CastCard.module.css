@@ -1,0 +1,13 @@
+.cast-card {
+  margin: 0.5rem;
+}
+
+.cast-card img {
+  width: 9rem;
+  border-radius: 12px;
+}
+
+.actor-name {
+  text-align: center;
+  font-size: 1.2rem;
+}

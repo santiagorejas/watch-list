@@ -1,0 +1,8 @@
+.cast {
+  position: relative;
+}
+
+.cast-card-container {
+  display: flex;
+  overflow-x: hidden;
+}

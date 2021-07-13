@@ -5,7 +5,7 @@ import NavBar from "./components/nav/NavBar";
 import FavoritesWatchedProvider from "./store/FavoritesWatchedProvider";
 import FavoritesPage from "./pages/FavoritesPage";
 import WatchedPage from "./pages/WatchedPage";
-import MovieDetailPage from "./pages/MovieDetailPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
             <WatchedPage />
           </Route>
           <Route path="/movies/:movieId">
-            <MovieDetailPage />
+            <MovieDetailsPage />
           </Route>
         </Switch>
       </FavoritesWatchedProvider>

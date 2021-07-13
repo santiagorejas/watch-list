@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import FavIcon from "../components/UI/FavIcon";
 import WatchedIcon from "../components/UI/WatchedIcon";
 import FavoritesWatchedContext from "../store/favorites-watched-context";
-import classes from "./MovieDetailPage.module.css";
+import classes from "./MovieDetailsPage.module.css";
+import CastList from "../components/cast/CastList";
 
 const MovieDetailPage = () => {
   const movieId = +useParams().movieId;
@@ -31,8 +32,6 @@ const MovieDetailPage = () => {
     addWatched,
     removeWatched,
   } = useContext(FavoritesWatchedContext);
-
-  console.log("re rendering!!!");
 
   const fav = isFav(movieId);
   const watched = wasWatched(movieId);
@@ -99,10 +98,7 @@ const MovieDetailPage = () => {
           <h2>Overview</h2>
           <p>{content.overview}</p>
         </div>
-        <div className={classes.cast}>
-          <h2>Cast</h2>
-          <div></div>
-        </div>
+        <CastList movieId={movieId} className={classes.cast} />
       </div>
     );
   }
