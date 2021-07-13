@@ -1,5 +1,6 @@
 import classes from "./HorizontalCard.module.css";
-import React, { useState } from "react";
+import React from "react";
+import { useHistory } from "react-router";
 
 const MediaCard = (props) => {
   const {
@@ -27,10 +28,16 @@ const MediaCard = (props) => {
     !watched ? onAddWatched(content.id) : onRemoveWatched(content.id);
   };
 
+  const history = useHistory();
+
+  const clickMovieHandler = () => {
+    history.push(`/movies/${content.id}`);
+  };
+
   return (
     <div className={classes.card}>
       <div className={classes["img-container"]}>
-        <img src={img} />
+        <img onClick={clickMovieHandler} src={img} />
         <i
           className={classes["fav-icon"] + " fas fa-heart"}
           onClick={onFavHandler}

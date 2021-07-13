@@ -1,0 +1,83 @@
+.movie-detail {
+  background-color: rgba(2, 23, 42, 1);
+  width: 90%;
+  max-width: 60rem;
+  margin: auto;
+  border-radius: 16px;
+  color: white;
+}
+
+.movie-detail-header {
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+.movie-poster-container {
+  width: 30%;
+  position: relative;
+}
+
+.movie-poster {
+  width: 100%;
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  max-width: 15rem;
+}
+
+.btn {
+  position: absolute;
+  right: 5%;
+  font-size: 1.7rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.8rem;
+  border-radius: 50%;
+  border: #03274b 1px solid;
+  opacity: 70%;
+  transition: opacity 200ms ease-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 100%;
+}
+
+.fav-icon {
+  bottom: 0%;
+}
+
+.watched-icon {
+  bottom: 16%;
+}
+
+.header-content {
+  width: 65%;
+  text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+.movie-main-info {
+  list-style: none;
+}
+
+.movie-title {
+  margin: 0.6rem 0;
+}
+
+.movie-main-info li {
+  margin: 0.4rem 0;
+}
+
+.overview,
+.cast {
+  padding: 1.5rem;
+}
+
+.overview h2,
+.cast h2 {
+  margin: 0.4rem 0;
+}

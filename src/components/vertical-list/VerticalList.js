@@ -36,7 +36,7 @@ const VerticalCardContainer = (props) => {
       {content.map((cont) => {
         return (
           <VerticalCard
-            ket={cont.id}
+            key={cont.id}
             content={cont}
             onAddFav={favWatchedCtx.addFavorite}
             onRemoveFav={favWatchedCtx.removeFavorite}
