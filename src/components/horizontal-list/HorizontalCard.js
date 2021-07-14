@@ -13,7 +13,11 @@ const MediaCard = (props) => {
     onRemoveWatched,
   } = props;
 
-  const title = content.title ? content.title : content.name;
+  const originalTitle = content.title ? content.title : content.name;
+  const trimmedTitle =
+    originalTitle.length > 25
+      ? originalTitle.substr(0, 25) + "..."
+      : originalTitle;
 
   const img = `https://image.tmdb.org/t/p/w500${content.poster_path}`;
   const favColor = {
@@ -52,7 +56,7 @@ const MediaCard = (props) => {
 
         <p>{content.vote_average}</p>
       </div>
-      <h1 className={classes.title}>{title}</h1>
+      <h1 className={classes.title}>{trimmedTitle}</h1>
       <h2 className={classes["release-date"]}>{content.release_data}</h2>
     </div>
   );
