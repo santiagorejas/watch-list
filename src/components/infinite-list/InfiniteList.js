@@ -11,24 +11,33 @@ const InfiniteList = (props) => {
 
   const favWatchedCtx = useContext(FavoritesWatchedContext);
 
-  const { isLoading, error, sendRequest } = useHttp(
-    {
-      url: props.url,
-    },
-    (data) => {
-      let contentList = [];
-      data.results.forEach((cont) => {
-        contentList.push(cont);
-      });
-      setContent(contentList);
-    }
-  );
+  const { isLoading, error, sendRequest } = useHttp();
+
+  const { url } = props;
 
   useEffect(() => {
-    sendRequest();
-  }, []);
+    sendRequest(
+      {
+        url: url,
+      },
+      (data) => {
+        let contentList = [];
+        data.results.forEach((cont) => {
+          contentList.push(cont);
+        });
+        setContent((prev) => [...prev, ...contentList]);
+      }
+    );
+  }, [url]);
 
-  const onScrollHandler = (event) => {};
+  const onScrollHandler = (event) => {
+    const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+
+    if (scrollHeight - scrollTop <= clientHeight + 200) {
+      console.log("FETCHING NEW MOVIES");
+      props.onScrollLimit();
+    }
+  };
 
   return (
     <div className={`${classes["infinite-list"]} main-container`}>

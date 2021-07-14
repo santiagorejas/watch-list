@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
-const useHttp = (requestConfig, applyData) => {
+const useHttp = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const sendRequest = async () => {
+  const sendRequest = useCallback(async (requestConfig, applyData) => {
     setIsLoading(true);
     setError(null);
     try {
       const response = await fetch(requestConfig.url, {
-        method: requestConfig.method,
-        headers: requestConfig.headers,
-        body: requestConfig.body,
+        method: requestConfig.method ? requestConfig.method : "GET",
+        headers: requestConfig.headers ? requestConfig.headers : {},
+        body: requestConfig.body ? requestConfig.body : null,
       });
 
       if (!response.ok) {
@@ -25,7 +25,7 @@ const useHttp = (requestConfig, applyData) => {
       setError(error.message || "Something went wrong");
     }
     setIsLoading(false);
-  };
+  });
 
   return {
     isLoading,

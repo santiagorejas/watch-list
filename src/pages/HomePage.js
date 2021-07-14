@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import HorizontalList from "../components/horizontal-list/HorizontalList";
 import InfiniteList from "../components/infinite-list/InfiniteList";
-import Logo from "../components/UI/Logo";
-import Spinner from "../components/UI/Spinner";
 import classes from "./HomePage.module.css";
 
 const HomePage = () => {

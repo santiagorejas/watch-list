@@ -10,21 +10,21 @@ import useHttp from "../../hooks/use-http";
 const HorizontalList = (props) => {
   const [content, setContent] = useState([]);
 
-  const { isLoading, error, sendRequest } = useHttp(
-    {
-      url: props.url,
-    },
-    (data) => {
-      let contentList = [];
-      data.results.forEach((cont) => {
-        contentList.push(cont);
-      });
-      setContent(contentList);
-    }
-  );
+  const { isLoading, error, sendRequest } = useHttp();
 
   useEffect(() => {
-    sendRequest();
+    sendRequest(
+      {
+        url: props.url,
+      },
+      (data) => {
+        let contentList = [];
+        data.results.forEach((cont) => {
+          contentList.push(cont);
+        });
+        setContent(contentList);
+      }
+    );
   }, []);
 
   const cardContainerWrapperRef = useRef();
