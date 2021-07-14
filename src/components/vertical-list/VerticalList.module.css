@@ -1,5 +1,5 @@
 .vertical-card-container {
-  width: 90%;
+  width: 85%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;

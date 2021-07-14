@@ -5,28 +5,27 @@ import SlideButton from "./SlideButton";
 import Spinner from "../UI/Spinner";
 import { useContext } from "react";
 import FavoritesWatchedContext from "../../store/favorites-watched-context";
+import useHttp from "../../hooks/use-http";
 
 const HorizontalList = (props) => {
   const [content, setContent] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
-  const { url } = props;
-
-  useEffect(() => {
-    const fetchData = async (url) => {
-      setIsLoading(true);
-      const response = await fetch(url);
-      const data = await response.json();
+  const { isLoading, error, sendRequest } = useHttp(
+    {
+      url: props.url,
+    },
+    (data) => {
       let contentList = [];
       data.results.forEach((cont) => {
         contentList.push(cont);
       });
       setContent(contentList);
-      setIsLoading(false);
-    };
+    }
+  );
 
-    fetchData(url);
-  }, [url]);
+  useEffect(() => {
+    sendRequest();
+  }, []);
 
   const cardContainerWrapperRef = useRef();
   const favWatchedCtx = useContext(FavoritesWatchedContext);

@@ -14,8 +14,8 @@ header {
   display: flex;
   justify-content: space-between;
   color: white;
-  padding: 0.3rem;
-  width: 80%;
+  padding: 0.6rem 1rem;
+  width: 85%;
   margin: auto;
 }
 
@@ -63,5 +63,9 @@ header {
 
   .burger-menu {
     display: inline-block;
+  }
+
+  .nav-bar {
+    width: 100%;
   }
 }

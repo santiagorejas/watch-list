@@ -1,13 +1,13 @@
 .logo {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 10rem;
 }
 
 .logo img,
 .logo h1 {
-  margin: 0.3rem;
+  margin-right: 0.3rem;
 }
 
 .logo img {
@@ -15,6 +15,7 @@
 }
 
 .logo h1 {
+  width: 70%;
   font-size: 1rem;
   vertical-align: middle;
   font-style: italic;
