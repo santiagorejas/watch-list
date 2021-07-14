@@ -53,6 +53,12 @@ header {
 }
 
 @media (max-width: 60rem) {
+  .nav-bar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 45rem) {
   .left-nav-bar ul {
     display: none;
   }
@@ -63,9 +69,5 @@ header {
 
   .burger-menu {
     display: inline-block;
-  }
-
-  .nav-bar {
-    width: 100%;
   }
 }
