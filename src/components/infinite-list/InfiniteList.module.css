@@ -1,0 +1,37 @@
+.infinite-list {
+  position: relative;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 1.5rem;
+  height: 90vh;
+  overflow: hidden;
+  justify-items: center;
+  padding: 1rem;
+}
+
+@media (max-width: 100rem) {
+  .card-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 85rem) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 50rem) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 35rem) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

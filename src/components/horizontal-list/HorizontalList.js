@@ -42,7 +42,6 @@ const HorizontalList = (props) => {
 
   return (
     <div className={classes["vertical-container"]}>
-      <h1 className={classes.title}>{props.title}</h1>
       <div
         ref={cardContainerWrapperRef}
         className={classes["content-container-wrapper"]}
@@ -66,12 +65,12 @@ const HorizontalList = (props) => {
       </div>
       <SlideButton
         containerRef={cardContainerWrapperRef}
-        right={false}
+        position={"left"}
         scrollLimit={190}
       />
       <SlideButton
         containerRef={cardContainerWrapperRef}
-        right={true}
+        position="right"
         scrollLimit={190}
       />
     </div>

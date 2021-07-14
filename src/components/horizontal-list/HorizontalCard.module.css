@@ -72,9 +72,24 @@
   font-weight: 600;
 }
 
-@media (max-width: 60rem) {
+@media (max-width: 90rem) {
   .card {
     width: 10rem;
+  }
+
+  .img-container i {
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  .card {
+    width: 9rem;
   }
 
   .img-container i {

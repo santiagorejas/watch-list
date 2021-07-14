@@ -4,9 +4,9 @@
 
 .content-container-wrapper {
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   transition: all 200ms ease-out;
-  padding: 1rem 0;
+  padding: 1.5rem 1rem;
 }
 
 .content-container {

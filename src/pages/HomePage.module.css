@@ -1,0 +1,32 @@
+.homepage {
+  width: 85%;
+  margin: auto;
+  background-color: var(--second-bg-color);
+  padding: 2rem;
+  max-width: 110rem;
+}
+
+.homepage h1 {
+  color: white;
+}
+
+@media (max-width: 60rem) {
+  .homepage {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .homepage {
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+}

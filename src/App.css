@@ -1,3 +1,32 @@
+:root {
+  --bg-color: #00050a;
+  --second-bg-color: #010e1a;
+}
+
 body {
-  background-color: #010e1a;
+  background-color: var(--bg-color);
+}
+
+.box-shadow-sm {
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+.box-shadow-md {
+  box-shadow: 12px 12px 12px 12px rgba(0, 0, 0, 0.5);
+}
+
+.box-shadow-bg {
+  box-shadow: 18px 18px 18px 18px rgba(0, 0, 0, 0.5);
+}
+
+.bor-rad-sm {
+  border-radius: 4px;
+}
+
+.bor-rad-md {
+  border-radius: 8px;
+}
+
+.bor-rad-bg {
+  border-radius: 16px;
 }
