@@ -1,0 +1,21 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+}
+
+.logo img,
+.logo h1 {
+  margin: 0.3rem;
+}
+
+.logo img {
+  width: 30%;
+}
+
+.logo h1 {
+  font-size: 1rem;
+  vertical-align: middle;
+  font-style: italic;
+}
