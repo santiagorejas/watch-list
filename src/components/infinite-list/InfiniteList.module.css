@@ -8,6 +8,7 @@
   row-gap: 1.5rem;
   height: 90vh;
   overflow: hidden;
+  scroll-behavior: smooth;
   justify-items: center;
   padding: 1rem;
 }

@@ -4,22 +4,15 @@ const SlideButton = (props) => {
   const { position } = props;
 
   const onClickHandler = (event) => {
-    const scrollLimit = props.scrollLimit;
-    const scroll = position === "right" || position === "down" ? 10 : -10;
+    const { scrollLimit } = props;
+    const scroll =
+      position === "right" || position === "down" ? scrollLimit : -scrollLimit;
 
-    let scrollAmount = 0;
-
-    let slideTimer = setInterval(() => {
-      if (position === "right" || position === "left") {
-        props.containerRef.current.scrollLeft += scroll;
-      } else {
-        props.containerRef.current.scrollTop += scroll;
-      }
-      scrollAmount += 10;
-      if (scrollAmount > scrollLimit) {
-        window.clearInterval(slideTimer);
-      }
-    }, 15);
+    if (position === "right" || position === "left") {
+      props.containerRef.current.scrollLeft += scroll;
+    } else {
+      props.containerRef.current.scrollTop += scroll;
+    }
   };
 
   const btnPositionStyle =

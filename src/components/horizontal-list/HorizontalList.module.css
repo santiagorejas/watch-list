@@ -7,6 +7,7 @@
   overflow: hidden;
   transition: all 200ms ease-out;
   padding: 1.5rem 1rem;
+  scroll-behavior: smooth;
 }
 
 .content-container {
