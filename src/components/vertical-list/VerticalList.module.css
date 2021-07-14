@@ -6,3 +6,27 @@
   margin: auto;
   gap: 2rem;
 }
+
+@media (max-width: 110rem) {
+  .vertical-card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 80rem) {
+  .vertical-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 60rem) {
+  .vertical-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 35rem) {
+  .vertical-card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
