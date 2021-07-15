@@ -1,0 +1,40 @@
+.search {
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+.search__movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(13rem), 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: flex-start;
+}
+
+.search__search-bar {
+  width: 90%;
+  margin: 0 auto 3rem auto;
+}
+
+@media (max-width: 90rem) {
+  .search__movies-container {
+    grid-template-columns: repeat(auto-fill, minmax(min(10rem), 1fr));
+  }
+}
+
+@media (max-width: 60rem) {
+  .search__movies-container {
+    grid-template-columns: repeat(auto-fill, minmax(min(9rem), 1fr));
+  }
+}
+
+@media (max-width: 30rem) {
+  .search__movies-container {
+    grid-template-columns: repeat(auto-fill, minmax(min(8rem), 1fr));
+  }
+
+  .search {
+    padding: 1rem;
+    margin: 0;
+  }
+}

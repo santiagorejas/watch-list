@@ -6,6 +6,7 @@ import FavoritesWatchedProvider from "./store/FavoritesWatchedProvider";
 import FavoritesPage from "./pages/FavoritesPage";
 import WatchedPage from "./pages/WatchedPage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
@@ -22,8 +23,11 @@ function App() {
           <Route path="/watched" exact>
             <WatchedPage />
           </Route>
-          <Route path="/movies/:movieId">
+          <Route path="/movies/:movieId" exact>
             <MovieDetailsPage />
+          </Route>
+          <Route path="/search" exact>
+            <SearchPage />
           </Route>
         </Switch>
       </FavoritesWatchedProvider>

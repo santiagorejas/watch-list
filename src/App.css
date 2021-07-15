@@ -31,3 +31,17 @@ body {
 .bor-rad-bg {
   border-radius: 16px;
 }
+
+.section {
+  border-radius: 16px;
+  background-color: var(--second-bg-color);
+  width: 85%;
+  margin: auto;
+}
+
+@media (max-width: 30rem) {
+  .section {
+    border-radius: 0;
+    width: 100%;
+  }
+}

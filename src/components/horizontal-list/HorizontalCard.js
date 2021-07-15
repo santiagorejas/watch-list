@@ -1,6 +1,7 @@
 import classes from "./HorizontalCard.module.css";
 import React from "react";
 import { useHistory } from "react-router";
+import imgNotFound from "../../resources/img/image-not-found.jpg";
 
 const MediaCard = (props) => {
   const {
@@ -19,7 +20,9 @@ const MediaCard = (props) => {
       ? originalTitle.substr(0, 25) + "..."
       : originalTitle;
 
-  const img = `https://image.tmdb.org/t/p/w500${content.poster_path}`;
+  const img = content.poster_path
+    ? `https://image.tmdb.org/t/p/w500${content.poster_path}`
+    : imgNotFound;
   const favColor = {
     color: fav ? "red" : "#ccc",
   };
