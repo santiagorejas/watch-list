@@ -9,9 +9,9 @@ const CastCard = (props) => {
   }
 
   return (
-    <div className={classes["cast-card"]}>
-      {<img className={classes["actor-img"]} src={img} />}
-      <h2 className={classes["actor-name"]}>{props.name}</h2>
+    <div className={`${classes["cast-card"]} ${props.className}`}>
+      <img src={img} />
+      <h1>{props.name}</h1>
     </div>
   );
 };

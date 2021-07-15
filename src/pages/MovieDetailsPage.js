@@ -53,23 +53,28 @@ const MovieDetailPage = () => {
 
     return (
       <div className={classes["movie-detail"]}>
-        <div className={classes["movie-detail-header"]} style={backgroundStyle}>
-          <div className={classes["movie-poster-container"]}>
-            <img className={classes["movie-poster"]} src={img} />
-            <FavIcon
-              onClick={onFavHandler}
-              fav={fav}
-              className={`${classes["btn"]} ${classes["fav-icon"]}`}
-            />
-            <WatchedIcon
-              onClick={onWatchedHandler}
-              watched={watched}
-              className={`${classes["btn"]} ${classes["watched-icon"]}`}
-            />
+        <div
+          className={classes["movie-detail__header"]}
+          style={backgroundStyle}
+        >
+          <div className={classes["movie-detail__poster-container"]}>
+            <img className={classes["movie-detail__poster"]} src={img} />
+            <div className={classes["movie-detail__btns"]}>
+              <FavIcon
+                onClick={onFavHandler}
+                fav={fav}
+                className={`${classes["movie-detail__btn"]}`}
+              />
+              <WatchedIcon
+                onClick={onWatchedHandler}
+                watched={watched}
+                className={`${classes["movie-detail__btn"]}`}
+              />
+            </div>
           </div>
-          <div className={classes["header-content"]}>
-            <h1 className={classes["movie-title"]}>{title}</h1>
-            <ul className={classes["movie-main-info"]}>
+          <div className={classes["movie-detail__content"]}>
+            <h1 className={classes["movie-detail__title"]}>{title}</h1>
+            <ul className={classes["movie-detail__main-info"]}>
               <li>
                 <h3>Release Date</h3>
                 <p>Release date</p>
@@ -94,11 +99,11 @@ const MovieDetailPage = () => {
           </div>
         </div>
 
-        <div className={classes.overview}>
+        <div className={classes["movie-detail__overview"]}>
           <h2>Overview</h2>
           <p>{content.overview}</p>
         </div>
-        <CastList movieId={movieId} className={classes.cast} />
+        <CastList movieId={movieId} className={classes["movie-detail__cast"]} />
       </div>
     );
   }

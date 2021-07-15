@@ -3,11 +3,9 @@
 }
 
 .cast-card img {
-  width: 9rem;
   border-radius: 12px;
 }
 
-.actor-name {
+.cast-card h1 {
   text-align: center;
-  font-size: 1.2rem;
 }

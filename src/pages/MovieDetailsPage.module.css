@@ -2,12 +2,12 @@
   background-color: rgba(2, 23, 42, 1);
   width: 90%;
   max-width: 60rem;
-  margin: auto;
+  margin: 2rem auto;
   border-radius: 16px;
   color: white;
 }
 
-.movie-detail-header {
+.movie-detail__header {
   background-position: center;
   background-size: cover;
   margin: auto;
@@ -18,66 +18,108 @@
   border-top-left-radius: 16px;
 }
 
-.movie-poster-container {
-  width: 30%;
-  position: relative;
+.movie-detail__poster-container {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.movie-poster {
+.movie-detail__poster {
   width: 100%;
-  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   max-width: 15rem;
 }
 
-.btn {
-  position: absolute;
-  right: 5%;
-  font-size: 1.7rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.8rem;
-  border-radius: 50%;
-  border: #03274b 1px solid;
-  opacity: 70%;
-  transition: opacity 200ms ease-out;
-  cursor: pointer;
+.movie-detail__poster,
+.movie-detail__btns {
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover {
+.movie-detail__btns {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 0.5rem;
+  width: 50%;
+  max-width: 15rem;
+  min-width: 6rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.movie-detail__btn {
+  margin: 0 0.8rem;
+  opacity: 70%;
+  cursor: pointer;
+  transition: opacity 300ms ease-out;
+}
+
+.movie-detail__btn:hover {
   opacity: 100%;
 }
 
-.fav-icon {
-  bottom: 0%;
-}
-
-.watched-icon {
-  bottom: 16%;
-}
-
-.header-content {
-  width: 65%;
+.movie-detail__content {
+  width: 60%;
   text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
-.movie-main-info {
+.movie-detail__main-info {
   list-style: none;
 }
 
-.movie-title {
+.movie-detail__main-info li {
+  margin: 0.4rem 0;
+}
+
+.movie-detail__title {
   margin: 0.6rem 0;
 }
 
-.movie-main-info li {
-  margin: 0.4rem 0;
-}
-
-.overview,
-.cast {
+.movie-detail__overview,
+.movie-detail__cast {
   padding: 1.5rem;
 }
 
-.overview h2,
-.cast h2 {
+.movie-detail__overview h2,
+.movie-detail__cast h2 {
   margin: 0.4rem 0;
+}
+
+@media (max-width: 30rem) {
+  .movie-detail {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  .movie-detail__header {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .movie-detail__header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie-detail__poster-container {
+    width: 75%;
+    margin-bottom: 1rem;
+  }
+
+  .movie-detail__content {
+    width: 100%;
+  }
+
+  .movie-detail__title {
+    font-size: 1.8rem;
+  }
+
+  .movie-detail__main-info {
+    font-size: 0.9rem;
+  }
 }

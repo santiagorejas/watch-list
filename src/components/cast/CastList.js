@@ -31,9 +31,15 @@ const CastList = (props) => {
     return (
       <div className={`${classes.cast} ${props.className}`}>
         <h2>The Cast</h2>
-        <div className={classes["cast-card-container"]} ref={castRef}>
+        <div className={classes["cast__card-container"]} ref={castRef}>
           {cast.map((actor) => {
-            return <CastCard name={actor.name} imgPath={actor.profile_path} />;
+            return (
+              <CastCard
+                name={actor.name}
+                imgPath={actor.profile_path}
+                className={classes["cast__card"]}
+              />
+            );
           })}
         </div>
         <SlideButton containerRef={castRef} right={false} scrollLimit={190} />

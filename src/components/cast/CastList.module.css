@@ -2,7 +2,25 @@
   position: relative;
 }
 
-.cast-card-container {
+.cast__card-container {
   display: flex;
   overflow-x: hidden;
+}
+
+.cast__card img {
+  width: 9rem;
+}
+
+.cast__card h1 {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 30rem) {
+  .cast__card img {
+    width: 7rem;
+  }
+
+  .cast__card h1 {
+    font-size: 0.9rem;
+  }
 }
