@@ -1,0 +1,25 @@
+.home-search {
+  background-image: url("../../resources/img/main-search-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 3rem;
+  text-align: center;
+}
+
+.logo {
+  margin: auto;
+}
+
+.logo img {
+  width: 6rem;
+}
+
+.logo h1 {
+  margin-left: 0.6rem;
+  font-size: 3rem;
+  text-shadow: 12px 12px 12px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar {
+  margin-top: 3rem;
+}

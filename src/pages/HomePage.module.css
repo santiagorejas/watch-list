@@ -1,9 +1,17 @@
 .homepage {
   width: 85%;
   margin: auto;
-  background-color: var(--second-bg-color);
-  padding: 2rem;
   max-width: 110rem;
+}
+
+.home-search,
+.sections-container {
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.sections-container {
+  background-color: var(--second-bg-color);
 }
 
 .homepage h1 {

@@ -1,0 +1,30 @@
+.search-bar {
+  background-color: var(--second-bg-color);
+  padding: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 90%;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  transition: box-shadow 200ms ease-out;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-bar input:focus {
+  outline: none;
+  box-shadow: 1px 1px 1px 1px var(--main-green-color);
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  color: var(--main-green-color);
+  width: 10%;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
