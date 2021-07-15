@@ -42,25 +42,26 @@ const MediaCard = (props) => {
   };
 
   return (
-    <div className={classes.card}>
-      <div className={classes["img-container"]}>
+    <div className={`${classes.card} ${props.className}`}>
+      <div className={classes["card__img-container"]}>
         <img onClick={clickMovieHandler} src={img} />
-        <i
-          className={classes["fav-icon"] + " fas fa-heart"}
-          onClick={onFavHandler}
-          style={favColor}
-        ></i>
-        <i
-          className={`${classes["watched-icon"]} far fa-eye${
-            watched ? "-slash" : ""
-          }`}
-          onClick={onWatchedHandler}
-        ></i>
+        <div className={classes["card__icons-container"]}>
+          <i
+            className={classes["card__fav-icon"] + " fas fa-heart"}
+            onClick={onFavHandler}
+            style={favColor}
+          ></i>
+          <i
+            className={`${classes["card__watched-icon"]} far fa-eye${
+              watched ? "-slash" : ""
+            }`}
+            onClick={onWatchedHandler}
+          ></i>
+        </div>
 
         <p>{content.vote_average}</p>
       </div>
-      <h1 className={classes.title}>{trimmedTitle}</h1>
-      <h2 className={classes["release-date"]}>{content.release_data}</h2>
+      <h1 className={classes["card__title"]}>{trimmedTitle}</h1>
     </div>
   );
 };

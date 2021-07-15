@@ -1,33 +1,79 @@
-.vertical-container {
+.horizontal-list {
   position: relative;
+  margin: 1rem 0;
 }
 
-.content-container-wrapper {
+.horizontal-list__content-container-wrapper {
   width: 100%;
   overflow: hidden;
   transition: all 200ms ease-out;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   scroll-behavior: smooth;
 }
 
-.content-container {
+.horizontal-list__content-container {
   display: inline-flex;
 }
 
-.title {
-  color: white;
-  margin: 1.2rem 0;
-  font-size: 2.3rem;
+.horizontal-list__card {
+  width: 12rem;
+  margin: 0 0.6rem;
 }
 
-@media (max-width: 60rem) {
-  .title {
-    font-size: 1.7rem;
+@media (max-width: 90rem) {
+  .horizontal-list {
+    margin: 1.5rem 0;
+  }
+
+  .horizontal-list__card {
+    width: 11rem;
+    margin: 0 0.5rem;
+  }
+
+  .horizontal-list__card h1 {
+    font-size: 1.2rem;
   }
 }
 
-@media (max-width: 30rem) {
-  .title {
-    font-size: 1.4rem;
+@media (max-width: 75rem) {
+  .horizontal-list {
+    margin: 1rem 0;
+  }
+
+  .horizontal-list__card {
+    width: 9rem;
+    margin: 0 0.4rem;
+  }
+
+  .horizontal-list__card i {
+    font-size: 1rem;
+    margin: 0.6rem 0;
+  }
+
+  .horizontal-list__card h1 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 45rem) {
+  .horizontal-list__content-container-wrapper {
+    padding: 0.5rem;
+  }
+
+  .horizontal-list {
+    margin: 0.5rem 0;
+  }
+
+  .horizontal-list__card {
+    width: 7rem;
+    margin: 0 0.3rem;
+  }
+
+  .horizontal-list__card i {
+    margin: 0.4rem 0;
+  }
+
+  .horizontal-list__card h1 {
+    font-size: 0.8rem;
   }
 }

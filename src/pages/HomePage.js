@@ -14,46 +14,69 @@ const HomePage = () => {
   const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=${nowPlayingPage}`;
 
   return (
-    <div className={`${classes.homepage} `}>
-      <HomeSearch className={`${classes["home-search"]}`} />
-      <div
-        className={`${classes["sections-container"]} box-shadow-bg bor-rad-bg`}
-      >
-        <h1 className={classes["section-title"]}>Titulo de la sección</h1>
-        <HorizontalList
-          url={
-            "https://api.themoviedb.org/3/trending/all/day?api_key=b61e1b3719a9ee56423ad6e473cbf2ab"
-          }
-        />
-        <h1 className={classes["section-title"]}>Titulo de la sección</h1>
-        <HorizontalList
-          url={
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=1"
-          }
-        />
-        <h1 className={classes["section-title"]}> Titulo de la sección</h1>
-        <HorizontalList
-          url={
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=2"
-          }
-        />
-        <h1 className={classes["section-title"]}>Titulo de la sección</h1>
-        <HorizontalList
-          url={
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=3"
-          }
-        />
-        <h1 className={classes["section-title"]}>Titulo de la sección</h1>
-        <HorizontalList
-          url={
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=4"
-          }
-        />
-        <h1 className={classes["section-title"]}>Titulo de la sección</h1>
-        <InfiniteList
-          url={nowPlayingUrl}
-          onScrollLimit={onScrollLimitHandler}
-        />
+    <div className={`${classes.homepage}`}>
+      <HomeSearch className={`${classes["homepage__search"]}`} />
+      <div className={`${classes["homepage__sections"]} section`}>
+        <div className={`{$classes['homepage__section]}`}>
+          <h1 className={classes["homepage__section-title"]}>
+            Titulo de la sección
+          </h1>
+          <HorizontalList
+            url={
+              "https://api.themoviedb.org/3/trending/all/day?api_key=b61e1b3719a9ee56423ad6e473cbf2ab"
+            }
+          />
+        </div>
+        <div className={classes["homepage__section"]}>
+          <h1 className={classes["homepage__section-title"]}>
+            Titulo de la assad
+          </h1>
+          <HorizontalList
+            url={
+              "https://api.themoviedb.org/3/movie/top_rated?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=1"
+            }
+          />
+        </div>
+        <div className={`${classes["homepage__section"]}`}>
+          <h1 className={classes["homepage__section-title"]}>
+            Titulo de la sección
+          </h1>
+          <HorizontalList
+            url={
+              "https://api.themoviedb.org/3/movie/top_rated?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=2"
+            }
+          />
+        </div>
+        <div className={`${classes["homepage__section"]}`}>
+          <h1 className={classes["homepage__section-title"]}>
+            Titulo de la sección
+          </h1>
+          <HorizontalList
+            url={
+              "https://api.themoviedb.org/3/movie/top_rated?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=3"
+            }
+          />
+        </div>
+        <div className={`${classes["homepage__section"]}`}>
+          <h1 className={classes["homepage__section-title"]}>
+            Titulo de la sección
+          </h1>
+          <HorizontalList
+            url={
+              "https://api.themoviedb.org/3/movie/top_rated?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US&page=4"
+            }
+          />
+        </div>
+
+        <div className={`$classes['homepage__section]`}>
+          <h1 className={classes["homepage__section-title"]}>
+            Titulo de la sección
+          </h1>
+          <InfiniteList
+            url={nowPlayingUrl}
+            onScrollLimit={onScrollLimitHandler}
+          />
+        </div>
       </div>
     </div>
   );

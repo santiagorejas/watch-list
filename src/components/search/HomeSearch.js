@@ -15,12 +15,10 @@ const HomeSearch = (props) => {
   };
 
   return (
-    <div
-      className={`${props.className}  bor-rad-bg box-shadow-bg ${classes["home-search"]}`}
-    >
-      <Logo className={`${classes.logo}`} />
+    <div className={`bor-rad-bg box-shadow-bg ${classes["home-search"]}`}>
+      <Logo className={`${classes["home-search__logo"]}`} />
       <SearchBar
-        className={`${classes["search-bar"]}`}
+        className={`${classes["home-search__search-bar"]}`}
         onSearch={onSearchHandler}
       />
     </div>

@@ -15,8 +15,11 @@ const NavBar = () => {
   return (
     <header>
       <nav className={classes["nav-bar"]}>
-        <div className={classes["left-nav-bar"]}>
-          <Logo className={classes.logo} onClick={onLogoClickHandler} />
+        <div className={classes["nav-bar__links"]}>
+          <Logo
+            className={classes["nav-bar__logo"]}
+            onClick={onLogoClickHandler}
+          />
           <ul>
             <li>
               <i class="fas fa-home"></i>

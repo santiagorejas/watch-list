@@ -1,5 +1,4 @@
 .card {
-  width: 13rem;
   transition: all 200ms ease-in-out;
 }
 
@@ -7,48 +6,50 @@
   transform: scale(1.1);
 }
 
-.img-container,
+.card__img-container,
 .title {
   cursor: pointer;
 }
 
-.img-container {
+.card__img-container {
   position: relative;
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-.img-container img {
+.card__img-container img {
   width: 80%;
   border-radius: 8px;
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.4);
 }
 
-.img-container i {
-  position: absolute;
+.card__icons-container {
   color: #ccc;
-  background-color: black;
-  padding: 0.7rem;
-  font-size: 1.3rem;
-  border-radius: 50%;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-  border: 2px solid #03274b;
-  opacity: 75%;
-  transition: opacity 300ms ease-out;
-  left: 0%;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 30%;
+  max-width: 4rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0%;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.6);
 }
 
-.fav-icon {
-  bottom: 3%;
+.card__icons-container i {
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin: 0.8rem 0;
+  opacity: 70%;
+  transition: all 300ms ease-out;
 }
 
-.watched-icon {
-  bottom: 25%;
-}
-
-.img-container i:hover {
+.card__icons-container i:hover {
   opacity: 100%;
 }
 
-.img-container p {
+.card__img-container p {
   position: absolute;
   color: white;
   background-color: rgba(0, 0, 0, 0.8);
@@ -59,60 +60,15 @@
   border-radius: 4px;
 }
 
-.title {
+.card__title {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   text-align: center;
   width: 80%;
   text-align: center;
 }
 
-.title:hover {
+.card__title:hover {
   font-weight: 600;
-}
-
-@media (max-width: 90rem) {
-  .card {
-    width: 10rem;
-  }
-
-  .img-container i {
-    padding: 0.6rem;
-    font-size: 1rem;
-  }
-
-  .title {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 60rem) {
-  .card {
-    width: 9rem;
-  }
-
-  .img-container i {
-    padding: 0.6rem;
-    font-size: 1rem;
-  }
-
-  .title {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 30rem) {
-  .card {
-    width: 8rem;
-  }
-
-  .img-container i {
-    font-size: 0.9rem;
-    padding: 0.4rem;
-  }
-
-  .title {
-    font-size: 0.9rem;
-  }
 }

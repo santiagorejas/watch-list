@@ -2,37 +2,61 @@
   position: relative;
 }
 
-.card-container {
+.infinite-list__card-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  row-gap: 1.5rem;
-  height: 90vh;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1.5rem;
+  height: 80vh;
   overflow: hidden;
   scroll-behavior: smooth;
   justify-items: center;
   padding: 1rem;
 }
 
-@media (max-width: 100rem) {
-  .card-container {
-    grid-template-columns: repeat(5, 1fr);
+@media (max-width: 90rem) {
+  .infinite-list__card-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    gap: 1.2rem;
   }
 }
 
-@media (max-width: 85rem) {
-  .card-container {
-    grid-template-columns: repeat(4, 1fr);
+@media (max-width: 75rem) {
+  .infinite-list__card-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: 0.8rem;
+  }
+
+  .infinite-list__card {
+    width: 9rem;
+    margin: 0 0.4rem;
+  }
+
+  .infinite-list__card i {
+    font-size: 1rem;
+    margin: 0.6rem 0;
+  }
+
+  .infinite-list__card h1 {
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 50rem) {
-  .card-container {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 45rem) {
+  .infinite-list__card-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr));
+    gap: 0.5rem;
   }
-}
 
-@media (max-width: 35rem) {
-  .card-container {
-    grid-template-columns: repeat(2, 1fr);
+  .infinite-list__card {
+    width: 7rem;
+    margin: 0 0.3rem;
+  }
+
+  .infinite-list__card i {
+    margin: 0.5rem 0;
+  }
+
+  .infinite-list__card h1 {
+    font-size: 0.8rem;
   }
 }

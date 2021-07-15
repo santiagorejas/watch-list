@@ -1,40 +1,56 @@
 .homepage {
   width: 85%;
-  margin: auto;
+  margin: 2rem auto;
   max-width: 110rem;
-}
-
-.home-search,
-.sections-container {
-  padding: 2rem;
-  margin: 2rem 0;
-}
-
-.sections-container {
-  background-color: var(--second-bg-color);
-}
-
-.homepage h1 {
   color: white;
 }
 
-@media (max-width: 60rem) {
-  .homepage {
-    padding: 1rem;
+.homepage__sections {
+  background-color: var(--second-bg-color);
+}
+
+.homepage__section {
+  margin: 2.5rem auto;
+}
+
+.homepage__section-title {
+  font-size: 2.2rem;
+  margin: 0.5rem 1rem;
+}
+
+@media (max-width: 90rem) {
+  .homepage__section-title {
+    font-size: 2rem;
   }
 
-  .section-title {
-    font-size: 1.5rem;
+  .homepage__section {
+    margin: 2rem auto;
   }
 }
 
-@media (max-width: 30rem) {
-  .homepage {
-    padding: 0.8rem;
-    width: 100%;
+@media (max-width: 60rem) {
+  .homepage__section-title {
+    font-size: 1.5rem;
   }
 
-  .section-title {
+  .homepage__section {
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 45rem) {
+  .homepage {
+    width: 95%;
+    padding: 0;
+    margin: 1rem auto;
+  }
+
+  .homepage__section-title {
+    margin: 0.5rem 1rem;
     font-size: 1.2rem;
+  }
+
+  .homepage__section {
+    margin: 1rem auto;
   }
 }

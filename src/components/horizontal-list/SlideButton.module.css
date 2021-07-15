@@ -3,7 +3,7 @@
   background-color: transparent;
   border: none;
   background-image: linear-gradient(to right, black 15%, transparent);
-  padding: 0.8rem;
+  padding: 1rem;
   cursor: pointer;
   opacity: 80%;
 }
@@ -14,7 +14,33 @@
 }
 
 .slide-btn i {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #5cdb95;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 90rem) {
+  .slide-btn {
+    padding: 0.8rem;
+  }
+
+  .slide-btn i {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  .slide-btn {
+    padding: 0.6rem;
+  }
+
+  .slide-btn i {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .slide-btn i {
+    font-size: 1.5rem;
+  }
 }

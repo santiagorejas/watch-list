@@ -40,23 +40,24 @@ const HorizontalList = (props) => {
   }
 
   return (
-    <div className={classes["vertical-container"]}>
+    <div className={classes["horizontal-list"]}>
       <div
         ref={cardContainerWrapperRef}
-        className={classes["content-container-wrapper"]}
+        className={classes["horizontal-list__content-container-wrapper"]}
       >
-        <div className={classes["content-container"]}>
+        <div className={classes["horizontal-list__content-container"]}>
           {content.map((cont) => {
             return (
               <HorizontalCard
                 key={cont.id}
                 content={cont}
+                fav={favWatchedCtx.favorites.includes(cont.id)}
                 watched={favWatchedCtx.watched.includes(cont.id)}
                 onAddFav={favWatchedCtx.addFavorite}
                 onRemoveFav={favWatchedCtx.removeFavorite}
                 onAddWatched={favWatchedCtx.addWatched}
                 onRemoveWatched={favWatchedCtx.removeWatched}
-                fav={favWatchedCtx.favorites.includes(cont.id)}
+                className={classes["horizontal-list__card"]}
               />
             );
           })}

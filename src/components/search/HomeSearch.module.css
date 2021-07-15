@@ -2,24 +2,56 @@
   background-image: url("../../resources/img/main-search-bg.jpg");
   background-position: center;
   background-size: cover;
-  padding: 4rem 3rem;
+  padding: 4rem;
   text-align: center;
 }
 
-.logo {
+.home-search__logo {
   margin: auto;
+  width: 20%;
+  align-items: center;
 }
 
-.logo img {
-  width: 6rem;
+.home-search__logo img {
+  width: 5.5rem;
 }
 
-.logo h1 {
+.home-search__logo h1 {
   margin-left: 0.6rem;
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-shadow: 12px 12px 12px rgba(0, 0, 0, 0.5);
 }
 
-.search-bar {
-  margin-top: 3rem;
+.home-search__search-bar {
+  margin-top: 5rem;
+}
+
+@media (max-width: 60rem) {
+  .home-search {
+    padding: 3;
+  }
+
+  .home-search__logo img {
+    width: 4rem;
+  }
+
+  .home-search__logo h1 {
+    margin-left: 0.4rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .home-search {
+    padding: 2rem;
+  }
+
+  .home-search__logo img {
+    width: 3rem;
+  }
+
+  .home-search__logo h1 {
+    margin-left: 0.3rem;
+    font-size: 2rem;
+  }
 }

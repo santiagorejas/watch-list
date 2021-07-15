@@ -1,13 +1,18 @@
-.logo {
+.nav-bar__logo {
   cursor: pointer;
 }
 
-.logo img {
+.nav-bar__logo img {
   width: 2rem;
 }
 
+.nav-bar__logo h1 {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
 header {
-  background-color: #010e1a;
+  background-color: var(--second-bg-color);
 }
 
 .nav-bar {
@@ -19,7 +24,7 @@ header {
   margin: auto;
 }
 
-.left-nav-bar {
+.nav-bar__links {
   display: flex;
 }
 
@@ -59,7 +64,7 @@ header {
 }
 
 @media (max-width: 45rem) {
-  .left-nav-bar ul {
+  .nav-bar__links ul {
     display: none;
   }
 

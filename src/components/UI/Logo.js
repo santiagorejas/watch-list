@@ -4,7 +4,7 @@ import classes from "./Logo.module.css";
 const Logo = (props) => {
   return (
     <div
-      className={`${classes.logo} ${props.className}`}
+      className={`${classes.logo} ${props.className} `}
       onClick={props.onClick}
     >
       <img src={camera} />

@@ -40,9 +40,9 @@ const InfiniteList = (props) => {
   };
 
   return (
-    <div className={`${classes["infinite-list"]} main-container`}>
+    <div className={`${classes["infinite-list"]} `}>
       <div
-        className={classes["card-container"]}
+        className={classes["infinite-list__card-container"]}
         ref={cardContainerWrapperRef}
         onScroll={onScrollHandler}
       >
@@ -57,6 +57,7 @@ const InfiniteList = (props) => {
               onAddWatched={favWatchedCtx.addWatched}
               onRemoveWatched={favWatchedCtx.removeWatched}
               fav={favWatchedCtx.favorites.includes(cont.id)}
+              className={classes["infinite-list__card"]}
             />
           );
         })}

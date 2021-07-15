@@ -19,13 +19,13 @@ const SlideButton = (props) => {
     position === "right"
       ? {
           right: "0%",
-          top: "25%",
+          top: "15%",
           backgroundImage: "linear-gradient(to left, black 15%, transparent)",
         }
       : position === "left"
       ? {
           left: "0%",
-          top: "25%",
+          top: "15%",
           backgroundImage: "linear-gradient(to right, black 15%, transparent)",
         }
       : position === "up"

@@ -2,20 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-}
-
-.logo img,
-.logo h1 {
-  margin-right: 0.3rem;
-}
-
-.logo img {
-  width: 3rem;
 }
 
 .logo h1 {
-  font-size: 1.2rem;
-  vertical-align: middle;
   font-style: italic;
 }

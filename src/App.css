@@ -1,6 +1,6 @@
 :root {
-  --bg-color: #00050a;
-  --second-bg-color: #010e1a;
+  --bg-color: #010e1a;
+  --second-bg-color: #02172a;
   --main-green-color: #4ed88c;
 }
 
@@ -35,13 +35,30 @@ body {
 .section {
   border-radius: 16px;
   background-color: var(--second-bg-color);
-  width: 85%;
-  margin: auto;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 2rem;
+  box-shadow: 18px 18px 18px 18px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 90rem) {
+  .section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  .section {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 30rem) {
   .section {
-    border-radius: 0;
-    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.5);
   }
 }
