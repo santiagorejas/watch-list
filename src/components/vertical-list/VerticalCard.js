@@ -28,16 +28,26 @@ const VerticalCard = (props) => {
   };
 
   const onImgClickHandler = () => {
-    history.push(`/movies/${content.id}`)
-  }
+    history.push(`/movies/${content.id}`);
+  };
 
   return (
     <div className={classes["vertical-card"]}>
-      <div className={classes['vertical-card__img-container']}>
-          <img className={classes["vertical-card__img"]} src={img} onClick={onImgClickHandler} />
+      <div className={classes["vertical-card__img-container"]}>
+        <img
+          className={classes["vertical-card__img"]}
+          src={img}
+          onClick={onImgClickHandler}
+        />
         <div className={classes["vertical-card__bottom"]}>
-          <p className={classes["vertical-card__rate"]}>{content.vote_average}</p>
-          <FavIcon onClick={onFavHandler} fav={fav} className={classes["vertical-card__btn"]} />
+          <p className={classes["vertical-card__rate"]}>
+            {content.vote_average}
+          </p>
+          <FavIcon
+            onClick={onFavHandler}
+            fav={fav}
+            className={classes["vertical-card__btn"]}
+          />
           <WatchedIcon
             onClick={onWatchedHandler}
             watched={watched}
@@ -68,8 +78,6 @@ const VerticalCard = (props) => {
           <p>Chinchu LIN</p>
         </li>
       </ul>
-
-
     </div>
   );
 };

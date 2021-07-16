@@ -5,24 +5,34 @@ import WatchedIcon from "../components/UI/WatchedIcon";
 import FavoritesWatchedContext from "../store/favorites-watched-context";
 import classes from "./MovieDetailsPage.module.css";
 import CastList from "../components/cast/CastList";
+import useHttp from "../hooks/use-http";
 
 const MovieDetailPage = () => {
   const movieId = +useParams().movieId;
-  const [content, setContent] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const { isLoading, error, sendRequest } = useHttp();
+  const [content, setContent] = useState(null);
+  const [cast, setCast] = useState([]);
+  const [crew, setCrew] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US`;
-      const response = await fetch(url);
-      const data = await response.json();
-      setContent(data);
-      setIsLoading(false);
-    };
-
-    fetchData();
-  }, movieId);
+    sendRequest(
+      {
+        url: `https://api.themoviedb.org/3/movie/${movieId}?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US`,
+      },
+      (data) => {
+        setContent(data);
+      }
+    );
+    sendRequest(
+      {
+        url: `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US`,
+      },
+      (data) => {
+        setCast(data.cast);
+        setCrew(data.crew);
+      }
+    );
+  }, [movieId]);
 
   const {
     isFav,
@@ -36,8 +46,9 @@ const MovieDetailPage = () => {
   const fav = isFav(movieId);
   const watched = wasWatched(movieId);
 
-  if (!isLoading) {
-    const title = content.title ? content.title : content.name;
+  if (isLoading) {
+    return <p>LOADING</p>;
+  } else if (!error && content && cast) {
     const backgroundStyle = {
       backgroundImage: `linear-gradient(to bottom, rgba(2, 23, 42, 0.6), rgba(2, 23, 42, 1)), url(https://image.tmdb.org/t/p/original${content.backdrop_path})`,
     };
@@ -50,6 +61,16 @@ const MovieDetailPage = () => {
     const onWatchedHandler = () => {
       !watched ? addWatched(movieId) : removeWatched(movieId);
     };
+
+    const title = content.title ? content.title : content.name;
+    const releaseDate = content.release_date;
+    const genres = content.genres.map((genre) => genre.name).join(", ");
+    const duration = `${content.runtime} mins`;
+    const originalLanguage = content.original_language.toUpperCase();
+    const directors = crew
+      .filter((cast) => cast.job === "Director")
+      .map((director) => director.name)
+      .join(", ");
 
     return (
       <div className={classes["movie-detail"]}>
@@ -77,23 +98,23 @@ const MovieDetailPage = () => {
             <ul className={classes["movie-detail__main-info"]}>
               <li>
                 <h3>Release Date</h3>
-                <p>Release date</p>
+                <p>{releaseDate}</p>
               </li>
               <li>
                 <h3>Genres</h3>
-                <p>Crimen, Drama, Misterio, Suspense</p>
+                <p>{genres}</p>
               </li>
               <li>
                 <h3>Duration</h3>
-                <p>1h 47m</p>
+                <p>{duration}</p>
               </li>
               <li>
                 <h3>Original Language</h3>
-                <p>EN</p>
+                <p>{originalLanguage}</p>
               </li>
               <li>
                 <h3>Director</h3>
-                <p>Chinchu LIN</p>
+                <p>{directors}</p>
               </li>
             </ul>
           </div>
@@ -103,12 +124,12 @@ const MovieDetailPage = () => {
           <h2>Overview</h2>
           <p>{content.overview}</p>
         </div>
-        <CastList movieId={movieId} className={classes["movie-detail__cast"]} />
+        <CastList credits={cast} className={classes["movie-detail__cast"]} />
       </div>
     );
   }
 
-  return <p>Loading...</p>;
+  return <p>An error has ocurred</p>;
 };
 
 export default MovieDetailPage;
