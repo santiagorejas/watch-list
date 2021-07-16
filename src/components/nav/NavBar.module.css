@@ -1,3 +1,11 @@
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--second-bg-color);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
 .nav-bar__logo {
   cursor: pointer;
   margin-right: 0.5rem;
@@ -10,10 +18,6 @@
 .nav-bar__logo h1 {
   font-size: 1.2rem;
   margin-left: 0.5rem;
-}
-
-header {
-  background-color: var(--second-bg-color);
 }
 
 .nav-bar {

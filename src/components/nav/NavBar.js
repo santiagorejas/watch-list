@@ -26,25 +26,23 @@ const NavBar = () => {
   };
 
   return (
-    <header>
-      <nav className={classes["nav-bar"]}>
-        <div className={classes["nav-bar__links-container"]}>
-          <Logo
-            className={classes["nav-bar__logo"]}
-            onClick={onLogoClickHandler}
-          />
-          <NavLinks className={classes["nav-bar__links"]} />
-        </div>
-
-        <SearchBtn className={classes.magnifier} />
-        <BurgerBtn
-          className={classes["nav-bar__burger-btn"]}
-          onClick={onBurgerBtnClick}
-          open={showSideBar}
+    <nav className={classes["nav-bar"]}>
+      <div className={classes["nav-bar__links-container"]}>
+        <Logo
+          className={classes["nav-bar__logo"]}
+          onClick={onLogoClickHandler}
         />
-        <BurgerMenu open={showSideBar} onClose={onCloseSideBar} />
-      </nav>
-    </header>
+        <NavLinks className={classes["nav-bar__links"]} />
+      </div>
+
+      <SearchBtn className={classes.magnifier} />
+      <BurgerBtn
+        className={classes["nav-bar__burger-btn"]}
+        onClick={onBurgerBtnClick}
+        open={showSideBar}
+      />
+      <BurgerMenu open={showSideBar} onClose={onCloseSideBar} />
+    </nav>
   );
 };
 
