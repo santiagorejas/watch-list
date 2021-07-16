@@ -51,8 +51,8 @@ const HorizontalList = (props) => {
               <HorizontalCard
                 key={cont.id}
                 content={cont}
-                fav={favWatchedCtx.favorites.includes(cont.id)}
-                watched={favWatchedCtx.watched.includes(cont.id)}
+                fav={favWatchedCtx.isFav(cont.id)}
+                watched={favWatchedCtx.wasWatched(cont.id)}
                 onAddFav={favWatchedCtx.addFavorite}
                 onRemoveFav={favWatchedCtx.removeFavorite}
                 onAddWatched={favWatchedCtx.addWatched}
