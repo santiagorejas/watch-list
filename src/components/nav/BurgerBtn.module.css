@@ -1,0 +1,6 @@
+.burger-menu__show-btn {
+  background: none;
+  border: none;
+  color: var(--main-green-color);
+  font-size: 1.1rem;
+}
