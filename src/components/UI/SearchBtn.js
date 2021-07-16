@@ -6,7 +6,7 @@ const SearchBtn = (props) => {
       className={`${classes["search-btn"]} ${props.className}`}
       onClick={props.onClick}
     >
-      <i class="fas fa-search"></i>
+      <i className="fas fa-search"></i>
     </button>
   );
 };

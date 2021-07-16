@@ -46,13 +46,13 @@ const SlideButton = (props) => {
 
   const icon =
     position === "right" ? (
-      <i class="fas fa-chevron-right"></i>
+      <i className="fas fa-chevron-right"></i>
     ) : position === "left" ? (
-      <i class="fas fa-chevron-left"></i>
+      <i className="fas fa-chevron-left"></i>
     ) : position === "up" ? (
-      <i class="fas fa-chevron-up"></i>
+      <i className="fas fa-chevron-up"></i>
     ) : (
-      <i class="fas fa-chevron-down"></i>
+      <i className="fas fa-chevron-down"></i>
     );
 
   return (

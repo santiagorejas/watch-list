@@ -30,7 +30,7 @@ const SearchBar = (props) => {
         onKeyPress={onInputKeyPressHandler}
       />
       <button onClick={onSearchHandler}>
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
       </button>
     </div>
   );

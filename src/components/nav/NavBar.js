@@ -22,25 +22,25 @@ const NavBar = () => {
           />
           <ul>
             <li>
-              <i class="fas fa-home"></i>
+              <i className="fas fa-home"></i>
               <NavLink className={classes["nav-bar-link"]} to="/">
                 Home
               </NavLink>
             </li>
             <li>
-              <i class="fas fa-heart"></i>
+              <i className="fas fa-heart"></i>
               <NavLink className={classes["nav-bar-link"]} to="/favorites">
                 Favorites
               </NavLink>
             </li>
             <li>
-              <i class="fas fa-eye"></i>
+              <i className="fas fa-eye"></i>
               <NavLink className={classes["nav-bar-link"]} to="/watched">
                 Watched
               </NavLink>
             </li>
             <li>
-              <i class="fab fa-github"></i>
+              <i className="fab fa-github"></i>
               <a
                 className={classes["nav-bar-link"]}
                 to="/about"
