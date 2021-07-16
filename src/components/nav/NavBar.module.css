@@ -4,6 +4,11 @@
   z-index: 10;
   background-color: var(--second-bg-color);
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 0.6rem 1rem;
+  margin: auto;
 }
 
 .nav-bar__logo {
@@ -18,15 +23,6 @@
 .nav-bar__logo h1 {
   font-size: 1.2rem;
   margin-left: 0.5rem;
-}
-
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  padding: 0.6rem 1rem;
-  width: 85%;
-  margin: auto;
 }
 
 .nav-bar__links-container {
