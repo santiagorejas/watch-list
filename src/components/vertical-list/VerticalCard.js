@@ -1,6 +1,7 @@
 import FavIcon from "../UI/FavIcon";
 import WatchedIcon from "../UI/WatchedIcon";
 import classes from "./VerticalCard.module.css";
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const VerticalCard = (props) => {
@@ -14,6 +15,7 @@ const VerticalCard = (props) => {
     onRemoveWatched,
   } = props;
 
+  const history = useHistory();
   const title = content.title ? content.title : content.name;
   const img = `https://image.tmdb.org/t/p/w500${content.backdrop_path}`;
 
@@ -25,11 +27,26 @@ const VerticalCard = (props) => {
     !watched ? onAddWatched(content.id) : onRemoveWatched(content.id);
   };
 
+  const onImgClickHandler = () => {
+    history.push(`/movies/${content.id}`)
+  }
+
   return (
     <div className={classes["vertical-card"]}>
-      <img className={classes["card-img"]} src={img} />
-      <h1 className={classes["card-title"]}>{title}</h1>
-      <ul className={classes["card-info"]}>
+      <div className={classes['vertical-card__img-container']}>
+          <img className={classes["vertical-card__img"]} src={img} onClick={onImgClickHandler} />
+        <div className={classes["vertical-card__bottom"]}>
+          <p className={classes["vertical-card__rate"]}>{content.vote_average}</p>
+          <FavIcon onClick={onFavHandler} fav={fav} className={classes["vertical-card__btn"]} />
+          <WatchedIcon
+            onClick={onWatchedHandler}
+            watched={watched}
+            className={classes["vertical-card__btn"]}
+          />
+        </div>
+      </div>
+      <h1 className={classes["vertical-card__title"]}>{title}</h1>
+      <ul className={classes["vertical-card__info"]}>
         <li>
           <h3>Release Date</h3>
           <p>{content.release_date}</p>
@@ -52,15 +69,7 @@ const VerticalCard = (props) => {
         </li>
       </ul>
 
-      <div className={classes["card-bottom"]}>
-        <p className={classes["rate"]}>{content.vote_average}</p>
-        <FavIcon onClick={onFavHandler} fav={fav} className={classes["btn"]} />
-        <WatchedIcon
-          onClick={onWatchedHandler}
-          watched={watched}
-          className={classes["btn"]}
-        />
-      </div>
+
     </div>
   );
 };

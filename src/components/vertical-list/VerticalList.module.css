@@ -3,12 +3,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
   justify-items: center;
-  margin: auto;
-  gap: 2rem;
+  margin:2rem auto;
+  gap: 2.5rem;
 }
 
 @media (max-width: 75rem) {
   .vertical-card-container {
     width: 95%;
+
+    gap: 1.5rem;
   }
 }
