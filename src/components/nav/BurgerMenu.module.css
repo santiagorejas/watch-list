@@ -10,8 +10,6 @@
   transition: transform 300ms ease-out;
   display: none;
   align-items: center;
-
-  overflow: hidden;
 }
 
 .burger-menu__search-bar {

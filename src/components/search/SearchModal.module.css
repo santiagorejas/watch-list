@@ -1,0 +1,59 @@
+.backdrop {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.search-modal__close-btn {
+  color: var(--main-green-color);
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.2rem;
+  margin: 0.5rem 0.8rem;
+  opacity: 70%;
+  transition: opacity 300ms ease-out;
+  cursor: pointer;
+}
+
+.search-modal__close-btn:hover {
+  opacity: 100%;
+}
+
+.search-modal__title {
+  color: white;
+  font-weight: 300;
+  font-size: 1.6rem;
+  margin: 0.4rem;
+}
+
+.search-modal {
+  position: fixed;
+  width: 35%;
+  background-color: white;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5rem;
+  border-radius: 16px;
+  background-color: var(--second-bg-color);
+}
+
+@media (max-width: 60rem) {
+  .search-modal {
+    width: 50%;
+  }
+}
+
+@media (max-width: 30rem) {
+  .search-modal {
+    width: 80%;
+  }
+}

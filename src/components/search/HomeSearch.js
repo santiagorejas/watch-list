@@ -5,7 +5,6 @@ import { useLocation, useHistory } from "react-router-dom";
 
 const HomeSearch = (props) => {
   const history = useHistory();
-  const location = useLocation();
 
   const onSearchHandler = (inputValue) => {
     history.push({

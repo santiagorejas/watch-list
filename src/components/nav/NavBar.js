@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import classes from "./NavBar.module.css";
 import Logo from "../UI/Logo";
 import { useState } from "react";
@@ -7,9 +6,11 @@ import SearchBtn from "../UI/SearchBtn";
 import BurgerBtn from "./BurgerBtn";
 import BurgerMenu from "./BurgerMenu";
 import NavLinks from "./NavLinks";
+import ModalSearch from "../search/SearchModal";
 
 const NavBar = () => {
   const [showSideBar, setShowSideBar] = useState(false);
+  const [showSearchModal, setShowSearchModal] = useState(false);
   const history = useHistory();
 
   const onLogoClickHandler = () => {
@@ -22,7 +23,6 @@ const NavBar = () => {
 
   const onCloseSideBar = () => {
     setShowSideBar(false);
-    console.log("CLOSE SIDE BAR");
   };
 
   return (
@@ -35,7 +35,13 @@ const NavBar = () => {
         <NavLinks className={classes["nav-bar__links"]} />
       </div>
 
-      <SearchBtn className={classes.magnifier} />
+      <SearchBtn
+        className={classes.magnifier}
+        onClick={() => setShowSearchModal(true)}
+      />
+      {showSearchModal && (
+        <ModalSearch onCancel={() => setShowSearchModal(false)} />
+      )}
       <BurgerBtn
         className={classes["nav-bar__burger-btn"]}
         onClick={onBurgerBtnClick}
