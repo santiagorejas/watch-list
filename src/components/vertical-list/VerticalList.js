@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import classes from "./VerticalList.module.css";
 import VerticalCard from "./VerticalCard";
 import FavoritesWatchedContext from "../../store/favorites-watched-context";
+import Spinner from "../UI/Spinner";
 
 const VerticalCardContainer = (props) => {
   const [content, setContent] = useState([]);
@@ -21,7 +22,7 @@ const VerticalCardContainer = (props) => {
           const data = await response.json();
           contentList.push(data);
         })
-      );
+      ).then(() => setIsLoading(false));
 
       setContent(contentList);
     };
@@ -30,6 +31,10 @@ const VerticalCardContainer = (props) => {
   }, [moviesId]);
 
   const favWatchedCtx = useContext(FavoritesWatchedContext);
+
+  if (isLoading) {
+    return <Spinner className="spinner" />;
+  }
 
   return (
     <div className={classes["vertical-card-container"]}>

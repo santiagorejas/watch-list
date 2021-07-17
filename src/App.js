@@ -3,14 +3,23 @@ import { Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/nav/NavBar";
 import FavoritesWatchedProvider from "./store/FavoritesWatchedProvider";
-import FavoritesPage from "./pages/FavoritesPage";
-import WatchedPage from "./pages/WatchedPage";
-import MovieDetailsPage from "./pages/MovieDetailsPage";
-import SearchPage from "./pages/SearchPage";
+import React, { Suspense } from "react";
+import Spinner from "./components/UI/Spinner";
+
+const FavoritesPage = React.lazy(() => import("./pages/FavoritesPage"));
+const WatchedPage = React.lazy(() => import("./pages/WatchedPage"));
+const MovieDetailsPage = React.lazy(() => import("./pages/MovieDetailsPage"));
+const SearchPage = React.lazy(() => import("./pages/SearchPage"));
 
 function App() {
   return (
-    <>
+    <Suspense
+      fallback={
+        <div>
+          <Spinner />
+        </div>
+      }
+    >
       <NavBar />
       <FavoritesWatchedProvider>
         <Switch>
@@ -31,7 +40,7 @@ function App() {
           </Route>
         </Switch>
       </FavoritesWatchedProvider>
-    </>
+    </Suspense>
   );
 }
 

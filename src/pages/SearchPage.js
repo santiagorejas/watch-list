@@ -5,6 +5,7 @@ import useHttp from "../hooks/use-http";
 import HorizontalCard from "../components/horizontal-list/HorizontalCard";
 import SearchBar from "../components/search/SearchBar";
 import FavoritesWatchedContext from "../store/favorites-watched-context";
+import Spinner from "../components/UI/Spinner";
 
 const SearchPage = (props) => {
   const [movies, setMovies] = useState([]);
@@ -46,22 +47,25 @@ const SearchPage = (props) => {
         className={classes["search__search-bar"]}
         onSearch={onSearchHandler}
       />
-      <div className={classes["search__movies-container"]}>
-        {movies.map((movie) => {
-          return (
-            <HorizontalCard
-              key={movie.id}
-              content={movie}
-              fav={favWatchedCtx.isFav(movie.id)}
-              watched={favWatchedCtx.wasWatched(movie.id)}
-              onAddFav={favWatchedCtx.addFavorite}
-              onRemoveFav={favWatchedCtx.removeFavorite}
-              onAddWatched={favWatchedCtx.addWatched}
-              onRemoveWatched={favWatchedCtx.removeWatched}
-            />
-          );
-        })}
-      </div>
+      {isLoading && <Spinner className="spinner" />}
+      {!isLoading && (
+        <div className={classes["search__movies-container"]}>
+          {movies.map((movie) => {
+            return (
+              <HorizontalCard
+                key={movie.id}
+                content={movie}
+                fav={favWatchedCtx.isFav(movie.id)}
+                watched={favWatchedCtx.wasWatched(movie.id)}
+                onAddFav={favWatchedCtx.addFavorite}
+                onRemoveFav={favWatchedCtx.removeFavorite}
+                onAddWatched={favWatchedCtx.addWatched}
+                onRemoveWatched={favWatchedCtx.removeWatched}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

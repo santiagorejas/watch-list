@@ -6,6 +6,7 @@ import FavoritesWatchedContext from "../store/favorites-watched-context";
 import classes from "./MovieDetailsPage.module.css";
 import CastList from "../components/cast/CastList";
 import useHttp from "../hooks/use-http";
+import Spinner from "../components/UI/Spinner";
 
 const MovieDetailPage = () => {
   const movieId = +useParams().movieId;
@@ -47,7 +48,7 @@ const MovieDetailPage = () => {
   const watched = wasWatched(movieId);
 
   if (isLoading) {
-    return <p>LOADING</p>;
+    return <Spinner className="spinner" />;
   } else if (!error && content && cast) {
     const backgroundStyle = {
       backgroundImage: `linear-gradient(to bottom, rgba(2, 23, 42, 0.6), rgba(2, 23, 42, 1)), url(https://image.tmdb.org/t/p/original${content.backdrop_path})`,
