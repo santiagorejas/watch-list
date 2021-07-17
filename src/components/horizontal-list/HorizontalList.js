@@ -6,6 +6,7 @@ import Spinner from "../UI/Spinner";
 import { useContext } from "react";
 import FavoritesWatchedContext from "../../store/favorites-watched-context";
 import useHttp from "../../hooks/use-http";
+import NoMovies from "../UI/NoMovies";
 
 const HorizontalList = (props) => {
   const [content, setContent] = useState([]);
@@ -37,6 +38,10 @@ const HorizontalList = (props) => {
         <Spinner />
       </div>
     );
+  }
+
+  if (error) {
+    return <NoMovies message={error} />;
   }
 
   return (

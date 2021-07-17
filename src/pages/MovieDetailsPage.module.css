@@ -5,6 +5,7 @@
   margin: 2rem auto;
   border-radius: 16px;
   color: white;
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
 }
 
 .movie-detail__header {

@@ -7,6 +7,7 @@ import classes from "./MovieDetailsPage.module.css";
 import CastList from "../components/cast/CastList";
 import useHttp from "../hooks/use-http";
 import Spinner from "../components/UI/Spinner";
+import NoMovies from "../components/UI/NoMovies";
 
 const MovieDetailPage = () => {
   const movieId = +useParams().movieId;
@@ -130,7 +131,7 @@ const MovieDetailPage = () => {
     );
   }
 
-  return <p>An error has ocurred</p>;
+  return <NoMovies message={error} />;
 };
 
 export default MovieDetailPage;

@@ -4,6 +4,7 @@ import VerticalCard from "./VerticalCard";
 import FavoritesWatchedContext from "../../store/favorites-watched-context";
 import Spinner from "../UI/Spinner";
 import NoMovies from "../UI/NoMovies";
+import useHttp from "../../hooks/use-http";
 
 const VerticalCardContainer = (props) => {
   const [content, setContent] = useState([]);
@@ -11,21 +12,25 @@ const VerticalCardContainer = (props) => {
 
   const { moviesId } = props;
 
+  const { sendRequest } = useHttp();
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      const contentList = [];
 
       await Promise.all(
         moviesId.map(async (movId) => {
           const url = `https://api.themoviedb.org/3/movie/${movId}?api_key=b61e1b3719a9ee56423ad6e473cbf2ab&language=en-US`;
-          const response = await fetch(url);
-          const data = await response.json();
-          contentList.push(data);
+          sendRequest(
+            {
+              url: url,
+            },
+            (data) => {
+              setContent((prev) => [...prev, data]);
+            }
+          );
         })
       ).then(() => setIsLoading(false));
-
-      setContent(contentList);
     };
 
     fetchData();
