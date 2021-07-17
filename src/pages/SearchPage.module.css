@@ -1,6 +1,7 @@
 .search {
   padding: 2rem;
   margin: 2rem auto;
+  width: 85%;
 }
 
 .search__movies-container {
@@ -25,6 +26,12 @@
 @media (max-width: 60rem) {
   .search__movies-container {
     grid-template-columns: repeat(auto-fill, minmax(min(9rem), 1fr));
+  }
+}
+
+@media (max-width: 45rem) {
+  .search {
+    width: 95%;
   }
 }
 

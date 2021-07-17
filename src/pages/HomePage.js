@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import HorizontalList from "../components/horizontal-list/HorizontalList";
 import InfiniteList from "../components/infinite-list/InfiniteList";
 import HomeSearch from "../components/search/HomeSearch";
+import TMDB from "../components/UI/TMDB";
 import classes from "./HomePage.module.css";
 
 const HomePage = () => {
@@ -50,6 +51,7 @@ const HomePage = () => {
           />
         </div>
       </div>
+      <TMDB />
     </div>
   );
 };

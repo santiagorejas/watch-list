@@ -1,0 +1,44 @@
+.tmdb {
+  width: 35%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+.tmdb a {
+  width: 30%;
+}
+
+.tmdb p {
+  font-size: 1.8rem;
+  width: 65%;
+  text-align: center;
+}
+
+@media (max-width: 90rem) {
+  .tmdb p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  .tmdb {
+    width: 50%;
+  }
+
+  .tmdb p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .tmdb {
+    width: 75%;
+  }
+
+  .tmdb p {
+    font-size: 0.8rem;
+  }
+}
