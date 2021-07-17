@@ -20,13 +20,11 @@ const SlideButton = (props) => {
       ? {
           right: "0%",
           top: "15%",
-          backgroundImage: "linear-gradient(to left, black 15%, transparent)",
         }
       : position === "left"
       ? {
           left: "0%",
           top: "15%",
-          backgroundImage: "linear-gradient(to right, black 15%, transparent)",
         }
       : position === "up"
       ? {
@@ -34,14 +32,12 @@ const SlideButton = (props) => {
           left: 0,
           right: 0,
           top: "0%",
-          backgroundImage: "linear-gradient(to bottom, black 15%, transparent)",
         }
       : {
           margin: "auto",
           left: 0,
           right: 0,
           bottom: "0%",
-          backgroundImage: "linear-gradient(to top, black 15%, transparent)",
         };
 
   const icon =
@@ -59,7 +55,7 @@ const SlideButton = (props) => {
     <button
       onClick={onClickHandler}
       style={btnPositionStyle}
-      className={classes["slide-btn"]}
+      className={`${classes["slide-btn"]} ${props.className}`}
     >
       {icon}
     </button>

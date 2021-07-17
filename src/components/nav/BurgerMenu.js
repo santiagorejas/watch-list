@@ -22,12 +22,6 @@ const BurgerMenu = (props) => {
       }
     : {};
 
-  if (props.open) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "scroll";
-  }
-
   return (
     <div className={classes["burger-menu"]} style={showStyle}>
       <SearchBar

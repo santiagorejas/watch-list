@@ -5,6 +5,7 @@
 .cast__card-container {
   display: flex;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .cast__card img {
@@ -23,4 +24,8 @@
   .cast__card h1 {
     font-size: 0.9rem;
   }
+}
+
+.cast-list__slide-btn {
+  top: 35% !important;
 }

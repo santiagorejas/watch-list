@@ -1,16 +1,15 @@
 .slide-btn {
   position: absolute;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
   border: none;
-  background-image: linear-gradient(to right, black 15%, transparent);
   padding: 1rem;
   cursor: pointer;
-  opacity: 80%;
+  transition: all 300ms;
 }
 
-.slide-btn {
-  opacity: 100%;
-  transition: opacity 200ms ease-out;
+.slide-btn:hover {
+  transform: scale(1.1);
 }
 
 .slide-btn i {

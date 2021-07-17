@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import classes from "./CastList.module.css";
-import SlideButton from "../UI/SlideButton";
+import SlideButton from "../horizontal-list/SlideButton";
 import CastCard from "./CastCard";
 
 const CastList = (props) => {
@@ -23,8 +23,18 @@ const CastList = (props) => {
             );
           })}
         </div>
-        <SlideButton containerRef={castRef} right={false} scrollLimit={190} />
-        <SlideButton containerRef={castRef} right={true} scrollLimit={190} />
+        <SlideButton
+          containerRef={castRef}
+          position={"right"}
+          scrollLimit={250}
+          className={classes["cast-list__slide-btn"]}
+        />
+        <SlideButton
+          containerRef={castRef}
+          position={"left"}
+          scrollLimit={250}
+          className={classes["cast-list__slide-btn"]}
+        />
       </div>
     );
   }

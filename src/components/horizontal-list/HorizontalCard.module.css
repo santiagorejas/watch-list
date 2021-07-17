@@ -41,12 +41,11 @@
   cursor: pointer;
   font-size: 1.4rem;
   margin: 0.8rem 0;
-  opacity: 70%;
-  transition: all 300ms ease-out;
+  transition: all 300ms;
 }
 
 .card__icons-container i:hover {
-  opacity: 100%;
+  transform: scale(0.9);
 }
 
 .card__img-container p {
