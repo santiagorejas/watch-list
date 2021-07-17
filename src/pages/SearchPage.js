@@ -6,6 +6,7 @@ import HorizontalCard from "../components/horizontal-list/HorizontalCard";
 import SearchBar from "../components/search/SearchBar";
 import FavoritesWatchedContext from "../store/favorites-watched-context";
 import Spinner from "../components/UI/Spinner";
+import NoMovies from "../components/UI/NoMovies";
 
 const SearchPage = (props) => {
   const [movies, setMovies] = useState([]);
@@ -41,12 +42,19 @@ const SearchPage = (props) => {
     });
   };
 
+  if (error) {
+    return <p>DFSFDS</p>;
+  }
+
   return (
     <div className={`${classes["search"]} section`}>
       <SearchBar
         className={classes["search__search-bar"]}
         onSearch={onSearchHandler}
       />
+      {movies.length === 0 && (
+        <NoMovies message={`No results for '${queryParams.get("name")}'`} />
+      )}
       {isLoading && <Spinner className="spinner" />}
       {!isLoading && (
         <div className={classes["search__movies-container"]}>

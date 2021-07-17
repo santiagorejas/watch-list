@@ -1,0 +1,14 @@
+.no-movies {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  font-size: 2rem;
+  text-align: center;
+  width: 80%;
+}
+
+.no-movies__message {
+  margin-left: 1rem;
+}

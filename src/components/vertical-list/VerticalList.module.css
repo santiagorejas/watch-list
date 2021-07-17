@@ -3,8 +3,15 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
   justify-items: center;
-  margin:2rem auto;
+  margin: 2rem auto;
   gap: 2.5rem;
+}
+
+.no-movies {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.6);
+  background: var(--second-bg-color);
 }
 
 @media (max-width: 75rem) {

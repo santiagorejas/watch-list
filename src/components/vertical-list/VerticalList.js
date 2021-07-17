@@ -3,6 +3,7 @@ import classes from "./VerticalList.module.css";
 import VerticalCard from "./VerticalCard";
 import FavoritesWatchedContext from "../../store/favorites-watched-context";
 import Spinner from "../UI/Spinner";
+import NoMovies from "../UI/NoMovies";
 
 const VerticalCardContainer = (props) => {
   const [content, setContent] = useState([]);
@@ -34,6 +35,15 @@ const VerticalCardContainer = (props) => {
 
   if (isLoading) {
     return <Spinner className="spinner" />;
+  }
+
+  if (content.length === 0) {
+    return (
+      <NoMovies
+        className={classes["no-movies"]}
+        message="No movies were found"
+      />
+    );
   }
 
   return (
