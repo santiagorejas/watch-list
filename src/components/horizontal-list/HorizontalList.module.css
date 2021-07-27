@@ -5,10 +5,17 @@
 
 .horizontal-list__content-container-wrapper {
   width: 100%;
-  overflow: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   transition: all 200ms ease-out;
   padding: 1rem;
   scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.horizontal-list__content-container-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .horizontal-list__content-container {

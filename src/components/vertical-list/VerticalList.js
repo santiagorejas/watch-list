@@ -14,7 +14,6 @@ const VerticalCardContainer = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
       const contentList = [];
 
       await Promise.all(

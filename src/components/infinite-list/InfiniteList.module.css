@@ -7,10 +7,17 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
   gap: 1.5rem;
   height: 80vh;
-  overflow: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   scroll-behavior: smooth;
   justify-items: center;
   padding: 1rem;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.infinite-list__card-container::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 90rem) {
