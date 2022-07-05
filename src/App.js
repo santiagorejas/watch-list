@@ -12,39 +12,39 @@ const MovieDetailsPage = React.lazy(() => import("./pages/MovieDetailsPage"));
 const SearchPage = React.lazy(() => import("./pages/SearchPage"));
 
 function App() {
-  return (
-    <Suspense
-      fallback={
-        <div>
-          <Spinner />
-        </div>
-      }
-    >
-      <NavBar />
-      <FavoritesWatchedProvider>
-        <Switch>
-          <Route path="/" exact>
-            <HomePage />
-          </Route>
-          <Route path="/favorites" exact>
-            <FavoritesPage />
-          </Route>
-          <Route path="/watched" exact>
-            <WatchedPage />
-          </Route>
-          <Route path="/movies/:movieId" exact>
-            <MovieDetailsPage />
-          </Route>
-          <Route path="/search" exact>
-            <SearchPage />
-          </Route>
-          <Route path="*">
-            <Redirect to="/" />
-          </Route>
-        </Switch>
-      </FavoritesWatchedProvider>
-    </Suspense>
-  );
+    return (
+        <Suspense
+            fallback={
+                <div>
+                    <Spinner />
+                </div>
+            }
+        >
+            <NavBar />
+            <FavoritesWatchedProvider>
+                <Switch>
+                    <Route path="/" exact>
+                        <HomePage />
+                    </Route>
+                    <Route path="/favorites" exact>
+                        <FavoritesPage />
+                    </Route>
+                    <Route path="/watched" exact>
+                        <WatchedPage />
+                    </Route>
+                    <Route path="/movies/:movieId" exact>
+                        <MovieDetailsPage />
+                    </Route>
+                    <Route path="/search" exact>
+                        <SearchPage />
+                    </Route>
+                    <Route path="*">
+                        <Redirect to="/" />
+                    </Route>
+                </Switch>
+            </FavoritesWatchedProvider>
+        </Suspense>
+    );
 }
 
 export default App;

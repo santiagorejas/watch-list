@@ -6,6 +6,7 @@
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: white;
   padding: 0.6rem 1rem;
   margin: auto;
@@ -47,6 +48,18 @@
   display: none;
   position: relative;
   z-index: 120;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.login-btn span {
+  margin-left: 0.3rem;
 }
 
 @media (max-width: 60rem) {
