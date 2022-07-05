@@ -17,7 +17,6 @@
 @media (max-width: 75rem) {
   .vertical-card-container {
     width: 95%;
-
     gap: 1.5rem;
   }
 }

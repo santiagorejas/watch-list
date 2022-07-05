@@ -1,5 +1,6 @@
 .infinite-list {
   position: relative;
+  background-color: rgba(0,0,0,0.3);
 }
 
 .infinite-list__card-container {

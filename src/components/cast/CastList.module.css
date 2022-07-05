@@ -5,7 +5,14 @@
 .cast__card-container {
   display: flex;
   overflow-x: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   scroll-behavior: smooth;
+}
+
+.cast__card-container::-webkit-scrollbar {
+  display: none;
 }
 
 .cast__card img {
@@ -27,5 +34,9 @@
 }
 
 .cast-list__slide-btn {
-  top: 35% !important;
+  position: absolute ;
+  height: 50% !important;
+  top: 50% !important;
+  -ms-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
 }

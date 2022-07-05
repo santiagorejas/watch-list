@@ -14,8 +14,13 @@
 }
 
 .homepage__section-title {
-  font-size: 2.2rem;
-  margin: 0.5rem 1rem;
+  font-size: 2rem;
+  margin: 0.5rem 0rem;
+  background: linear-gradient(90deg, #04325b 25%, transparent 85%);
+  border-radius: 0.3rem;
+  padding: 0.8rem 1.5rem;
+  font-weight: 400;
+  text-shadow: rgba(0,0,0, 0.2) 3px 3px;
 }
 
 @media (max-width: 90rem) {
@@ -45,10 +50,6 @@
     margin: 1rem auto;
   }
 
-  .homepage__section-title {
-    margin: 0.5rem 1rem;
-    font-size: 1.2rem;
-  }
 
   .homepage__section {
     margin: 1rem auto;

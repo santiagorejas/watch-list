@@ -5,7 +5,7 @@
   margin: 2rem auto;
   border-radius: 16px;
   color: white;
-  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 1rem 1rem 1rem  rgba(0, 0, 0, 0.2);
 }
 
 .movie-detail__header {
@@ -87,6 +87,12 @@
 .movie-detail__overview h2,
 .movie-detail__cast h2 {
   margin: 0.4rem 0;
+}
+
+.movie-detail__overview p {
+  font-size: 1.1rem;
+  text-align: justify;
+  padding: 0.5rem;
 }
 
 @media (max-width: 30rem) {

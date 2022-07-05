@@ -2,7 +2,7 @@
   background-color: var(--second-bg-color);
   color: white;
   width: 100%;
-  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 9px 9px 9px 9px rgba(0, 0, 0, 0.18);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,6 +24,8 @@
 
 .vertical-card__img {
   width: 100%;
+  height: 15rem;
+  object-fit: cover;
   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
@@ -62,6 +64,9 @@
 }
 
 .vertical-card__info {
+  background-color: rgba(0,0,0,0.5);
+  margin: 0 0.5rem;
+  border-radius: 8px;
   padding: 0 1rem;
   margin-bottom: 1rem;
   list-style: none;

@@ -1,19 +1,16 @@
 .slide-btn {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 8px;
+  border-radius: 0.2rem;
   border: none;
   padding: 1rem;
   cursor: pointer;
   transition: all 300ms;
-}
-
-.slide-btn:hover {
-  transform: scale(1.1);
+  width: 5rem;
+  height: 5rem;
 }
 
 .slide-btn i {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #5cdb95;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
@@ -24,7 +21,7 @@
   }
 
   .slide-btn i {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -34,11 +31,16 @@
   }
 
   .slide-btn i {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 30rem) {
+  .slide-btn {
+    width: 3rem;
+    height: 3rem;
+  }
+
   .slide-btn i {
     font-size: 1.5rem;
   }

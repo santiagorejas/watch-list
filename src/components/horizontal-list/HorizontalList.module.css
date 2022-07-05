@@ -1,6 +1,8 @@
 .horizontal-list {
   position: relative;
-  margin: 1rem 0;
+  margin: 2.5rem 0;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 0.5rem;
 }
 
 .horizontal-list__content-container-wrapper {
@@ -20,6 +22,8 @@
 
 .horizontal-list__content-container {
   display: inline-flex;
+  padding: 1rem;
+  overflow-y: hidden;
 }
 
 .horizontal-list__card {

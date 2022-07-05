@@ -10,32 +10,36 @@ const CastList = (props) => {
 
   if (cast) {
     return (
-      <div className={`${classes.cast} ${props.className}`}>
-        <h2>The Cast</h2>
-        <div className={classes["cast__card-container"]} ref={castRef}>
-          {cast.map((actor) => {
-            return (
-              <CastCard
-                name={actor.name}
-                imgPath={actor.profile_path}
-                className={classes["cast__card"]}
-              />
-            );
-          })}
+      <>
+        <h2 className="section-title" style={{ margin: "0rem 1.5rem" }}>
+          The Cast
+        </h2>
+        <div className={`${classes.cast} ${props.className}`}>
+          <div className={classes["cast__card-container"]} ref={castRef}>
+            {cast.map((actor) => {
+              return (
+                <CastCard
+                  name={actor.name}
+                  imgPath={actor.profile_path}
+                  className={classes["cast__card"]}
+                />
+              );
+            })}
+          </div>
+          <SlideButton
+            containerRef={castRef}
+            position={"right"}
+            scrollLimit={250}
+            className={classes["cast-list__slide-btn"]}
+          />
+          <SlideButton
+            containerRef={castRef}
+            position={"left"}
+            scrollLimit={250}
+            className={classes["cast-list__slide-btn"]}
+          />
         </div>
-        <SlideButton
-          containerRef={castRef}
-          position={"right"}
-          scrollLimit={250}
-          className={classes["cast-list__slide-btn"]}
-        />
-        <SlideButton
-          containerRef={castRef}
-          position={"left"}
-          scrollLimit={250}
-          className={classes["cast-list__slide-btn"]}
-        />
-      </div>
+      </>
     );
   }
 

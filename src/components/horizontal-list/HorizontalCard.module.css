@@ -4,6 +4,7 @@
 
 .card:hover {
   transform: scale(1.1);
+  overflow-y: hidden;
 }
 
 .card__img-container,
@@ -20,13 +21,13 @@
 .card__img-container img {
   width: 80%;
   border-radius: 8px;
-  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.35);
 }
 
 .card__icons-container {
   color: #ccc;
   background-color: rgba(0, 0, 0, 0.9);
-  width: 30%;
+  width: 25%;
   max-width: 4rem;
   border-radius: 8px;
   display: flex;
@@ -35,13 +36,15 @@
   position: absolute;
   bottom: 0%;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
 }
 
 .card__icons-container i {
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin: 0.8rem 0;
   transition: all 300ms;
+  
 }
 
 .card__icons-container i:hover {
@@ -66,6 +69,7 @@
   text-align: center;
   width: 80%;
   text-align: center;
+  margin-top: 1.5rem;
 }
 
 .card__title:hover {

@@ -123,7 +123,7 @@ const MovieDetailPage = () => {
         </div>
 
         <div className={classes["movie-detail__overview"]}>
-          <h2>Overview</h2>
+          <h2 className="section-title">Overview</h2>
           <p>{content.overview}</p>
         </div>
         <CastList credits={cast} className={classes["movie-detail__cast"]} />
