@@ -62,6 +62,11 @@
   margin-left: 0.3rem;
 }
 
+.nav-bar__right-side {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 60rem) {
   .nav-bar {
     width: 100%;

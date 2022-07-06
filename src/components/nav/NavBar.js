@@ -7,13 +7,15 @@ import BurgerBtn from "./BurgerBtn";
 import BurgerMenu from "./BurgerMenu";
 import NavLinks from "./NavLinks";
 import ModalSearch from "../search/SearchModal";
+import HorizontalLoadingSpinnerBar from "../UI/HorizontalLoadingSpinnerBar";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
     const [showSideBar, setShowSideBar] = useState(false);
     const [showSearchModal, setShowSearchModal] = useState(false);
     const history = useHistory();
-    const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+    const { loginWithRedirect, logout, isAuthenticated, isLoading } =
+        useAuth0();
 
     const onLogoClickHandler = () => {
         history.push("/");
@@ -36,8 +38,9 @@ const NavBar = () => {
                 />
                 <NavLinks className={classes["nav-bar__links"]} />
             </div>
-            <div>
-                {!isAuthenticated && (
+            <div className={classes["nav-bar__right-side"]}>
+                {isLoading && <HorizontalLoadingSpinnerBar />}
+                {!isAuthenticated && !isLoading && (
                     <button
                         className={classes["login-btn"]}
                         onClick={() => {
@@ -48,7 +51,7 @@ const NavBar = () => {
                         <span>Login</span>
                     </button>
                 )}
-                {isAuthenticated && (
+                {isAuthenticated && !isLoading && (
                     <button
                         className={classes["login-btn"]}
                         onClick={() => {
@@ -62,6 +65,7 @@ const NavBar = () => {
                 <SearchBtn
                     className={classes.magnifier}
                     onClick={() => setShowSearchModal(true)}
+                    style={{ marginLeft: "0.5rem" }}
                 />
                 <BurgerBtn
                     className={classes["nav-bar__burger-btn"]}
