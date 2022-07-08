@@ -4,9 +4,11 @@ import HorizontalCard from "../horizontal-list/HorizontalCard";
 import SlideButton from "../horizontal-list/SlideButton";
 import useHttp from "../../hooks/use-http";
 import UserProfile from "../../context/user-profile";
+import Spinner from "../UI/Spinner";
 
 const InfiniteList = (props) => {
     const [content, setContent] = useState([]);
+    const [nowPlayingPage, setNowPlayingPage] = useState(1);
     const cardContainerWrapperRef = useRef();
 
     const favWatchedCtx = useContext(UserProfile);
@@ -18,7 +20,7 @@ const InfiniteList = (props) => {
     useEffect(() => {
         sendRequest(
             {
-                url: url,
+                url: `${url}&page=${nowPlayingPage}`,
             },
             (data) => {
                 let contentList = [];
@@ -28,14 +30,14 @@ const InfiniteList = (props) => {
                 setContent((prev) => [...prev, ...contentList]);
             }
         );
-    }, [url]);
+    }, [nowPlayingPage, url, sendRequest]);
 
     const onScrollHandler = (event) => {
         const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
 
         if (scrollHeight - scrollTop <= clientHeight + 200) {
             console.log("FETCHING NEW MOVIES");
-            props.onScrollLimit();
+            setNowPlayingPage((prev) => prev + 1);
         }
     };
 
@@ -46,21 +48,25 @@ const InfiniteList = (props) => {
                 ref={cardContainerWrapperRef}
                 onScroll={onScrollHandler}
             >
-                {content.map((cont) => {
-                    return (
-                        <HorizontalCard
-                            key={cont.id}
-                            content={cont}
-                            watched={favWatchedCtx.watched.includes(cont.id)}
-                            onAddFav={favWatchedCtx.addFavorite}
-                            onRemoveFav={favWatchedCtx.removeFavorite}
-                            onAddWatched={favWatchedCtx.addWatched}
-                            onRemoveWatched={favWatchedCtx.removeWatched}
-                            fav={favWatchedCtx.favorites.includes(cont.id)}
-                            className={classes["infinite-list__card"]}
-                        />
-                    );
-                })}
+                {isLoading && <Spinner />}
+                {!isLoading &&
+                    content.map((cont) => {
+                        return (
+                            <HorizontalCard
+                                key={cont.id}
+                                content={cont}
+                                watched={favWatchedCtx.watched.includes(
+                                    cont.id
+                                )}
+                                onAddFav={favWatchedCtx.addFavorite}
+                                onRemoveFav={favWatchedCtx.removeFavorite}
+                                onAddWatched={favWatchedCtx.addWatched}
+                                onRemoveWatched={favWatchedCtx.removeWatched}
+                                fav={favWatchedCtx.favorites.includes(cont.id)}
+                                className={classes["infinite-list__card"]}
+                            />
+                        );
+                    })}
             </div>
             <SlideButton
                 containerRef={cardContainerWrapperRef}

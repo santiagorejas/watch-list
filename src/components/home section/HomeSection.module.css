@@ -1,0 +1,42 @@
+  
+  .homepage-section {
+    margin: 2.5rem auto;
+  }
+  
+  .homepage-section__title {
+    font-size: 2rem;
+    margin: 0.5rem 0rem;
+    background: linear-gradient(90deg, #04325b 25%, transparent 85%);
+    border-radius: 0.3rem;
+    padding: 0.8rem 1.5rem;
+    font-weight: 400;
+    text-shadow: rgba(0,0,0, 0.2) 3px 3px;
+  }
+  
+  @media (max-width: 90rem) {
+    .homepage-section__title {
+      font-size: 2rem;
+    }
+  
+    .homepage-section {
+      margin: 2rem auto;
+    }
+  }
+  
+  @media (max-width: 60rem) {
+    .homepage-section__title {
+      font-size: 1.5rem;
+    }
+  
+    .homepage-section {
+      margin: 1.5rem auto;
+    }
+  }
+  
+  @media (max-width: 45rem) {
+  
+    .homepage-section {
+      margin: 1rem auto;
+    }
+  }
+  

@@ -1,6 +1,6 @@
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/Home/HomePage";
 import NavBar from "./components/nav/NavBar";
 import React, { Suspense } from "react";
 import Spinner from "./components/UI/Spinner";
