@@ -28,6 +28,7 @@
   color: #ccc;
   background-color: rgba(0, 0, 0, 0.9);
   width: 25%;
+  height: 5.5rem;
   max-width: 4rem;
   border-radius: 8px;
   display: flex;
@@ -74,4 +75,11 @@
 
 .card__title:hover {
   font-weight: 600;
+}
+
+@media (max-width: 45rem) {
+  .card__icons-container {
+    height: 4rem;
+    width: 30%;
+  }
 }
