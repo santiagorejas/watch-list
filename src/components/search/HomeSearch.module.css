@@ -1,8 +1,6 @@
 .home-search {
-
-  backdrop-filter: blur(5px);
-  background-image: url("../../resources/img/main-search-bg.jpg");
-  background-position: center;
+  background-image: radial-gradient(rgba(0,0,0,0.35), rgba(0,0,0,1)), url("../../resources/img/main-search-bg.jpg");
+  background-position: bottom;
   background-size: cover;
   padding: 4rem;
   text-align: center;
@@ -25,10 +23,10 @@
 }
 
 .home-search__search-bar {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
-@media (max-width: 60rem) {
+@media (max-width: 55rem) {
   .home-search {
     padding: 3;
   }
