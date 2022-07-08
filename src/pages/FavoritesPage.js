@@ -1,16 +1,15 @@
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import VerticalList from "../components/vertical-list/VerticalList";
-import FavoritesWatchedContext from "../store/favorites-watched-context";
-import classes from "./FavoritesPage.module.css";
+import UserProfile from "../context/user-profile";
 
 const FavoritesPage = () => {
-  const favWatchedCtx = useContext(FavoritesWatchedContext);
+    const favWatchedCtx = useContext(UserProfile);
 
-  return (
-    <>
-      <VerticalList moviesId={favWatchedCtx.favorites} />
-    </>
-  );
+    return (
+        <>
+            <VerticalList moviesId={favWatchedCtx.favorites} />
+        </>
+    );
 };
 
 export default FavoritesPage;

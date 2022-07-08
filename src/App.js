@@ -2,7 +2,6 @@ import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/nav/NavBar";
-import FavoritesWatchedProvider from "./store/FavoritesWatchedProvider";
 import React, { Suspense } from "react";
 import Spinner from "./components/UI/Spinner";
 
@@ -21,28 +20,26 @@ function App() {
             }
         >
             <NavBar />
-            <FavoritesWatchedProvider>
-                <Switch>
-                    <Route path="/" exact>
-                        <HomePage />
-                    </Route>
-                    <Route path="/favorites" exact>
-                        <FavoritesPage />
-                    </Route>
-                    <Route path="/watched" exact>
-                        <WatchedPage />
-                    </Route>
-                    <Route path="/movies/:movieId" exact>
-                        <MovieDetailsPage />
-                    </Route>
-                    <Route path="/search" exact>
-                        <SearchPage />
-                    </Route>
-                    <Route path="*">
-                        <Redirect to="/" />
-                    </Route>
-                </Switch>
-            </FavoritesWatchedProvider>
+            <Switch>
+                <Route path="/" exact>
+                    <HomePage />
+                </Route>
+                <Route path="/favorites" exact>
+                    <FavoritesPage />
+                </Route>
+                <Route path="/watched" exact>
+                    <WatchedPage />
+                </Route>
+                <Route path="/movies/:movieId" exact>
+                    <MovieDetailsPage />
+                </Route>
+                <Route path="/search" exact>
+                    <SearchPage />
+                </Route>
+                <Route path="*">
+                    <Redirect to="/" />
+                </Route>
+            </Switch>
         </Suspense>
     );
 }
