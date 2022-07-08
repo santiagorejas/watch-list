@@ -34,10 +34,10 @@ const MovieDetailPage = () => {
                 setCrew(data.crew);
             }
         );
-    }, [movieId]);
+    }, [movieId, sendRequest]);
 
     const {
-        isFav,
+        isFavorite,
         wasWatched,
         addFavorite,
         removeFavorite,
@@ -45,7 +45,7 @@ const MovieDetailPage = () => {
         removeWatched,
     } = useContext(UserProfile);
 
-    const fav = isFav(movieId);
+    const fav = isFavorite(movieId);
     const watched = wasWatched(movieId);
 
     if (isLoading) {
@@ -84,6 +84,7 @@ const MovieDetailPage = () => {
                         <img
                             className={classes["movie-detail__poster"]}
                             src={img}
+                            alt={title}
                         />
                         <div className={classes["movie-detail__btns"]}>
                             <FavIcon
