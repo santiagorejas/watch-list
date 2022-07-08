@@ -15,6 +15,8 @@
 .burger-menu__search-bar {
   width: 80%;
   margin-bottom: 2rem;
+  background-color: #04294a;
+  box-shadow: none;
 }
 
 .burger-menu__links {
